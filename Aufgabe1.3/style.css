@@ -1,6 +1,7 @@
 .body{
     background:rgba(137, 43, 226, 0.322);
-    color:white;
+    width: 1920px;
+    height: 1080px;
 }
 .header{
     background-color: black;
