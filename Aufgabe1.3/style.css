@@ -1,3 +1,7 @@
+.body{
+    background:rgba(137, 43, 226, 0.322);
+    color:white;
+}
 .header{
     background-color: black;
     font-size: 130pt;
@@ -6,4 +10,7 @@
     position:absolute top;
     border-radius: 10px 10px 10px 10px;
     padding: 5px 10px 5px 5px;
+}
+a{
+    
 }
