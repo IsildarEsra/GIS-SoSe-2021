@@ -1,24 +1,21 @@
 .body{
-    background:rgba(137, 43, 226, 0.322);
-    width:auto;
-    height:auto;
+    background-color:rgba(137, 43, 226, 0.247);
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 40px 10px;
 }
-.header{
-    background-color: black;
-    font-size: 130pt;
-    font-weight: bold;
-    color: black;
-    position:absolute top;
-    border-radius: 10px 10px 10px 10px;
-    padding: 5px 10px 5px 5px;
+
+
+nav{
+    background-color: teal;
+    color: violet;
+    position: absolute top;
+    font-size: medium;
+    font-style: italic;
 }
-a{
-    
-}
+header{}
+
 img {
-        float: right;
-        width: 234px;
-        height: 123px;
-        margin-left: 20px;
-        border: 1px solid rgb(204, 0, 255);
-} 
+    width:300px;
+    margin: 20px;
+    border: 2px solid rgb(204, 0, 255);
+    } 
