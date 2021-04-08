@@ -1,21 +1,40 @@
-.body{
-    background-color:rgba(137, 43, 226, 0.247);
+body{
+    background-color:rgba(62, 15, 105, 0.507);
     padding: 10px 10px 10px 10px;
     margin: 10px 10px 40px 10px;
 }
 
 
-nav{
-    background-color: teal;
-    color: violet;
-    position: absolute top;
-    font-size: medium;
-    font-style: italic;
+ul{
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
 }
-header{}
+li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    padding: 8px;
+    background-color:white;
+  }
+
+li a:hover:not(.active) {
+    background-color:rgba(71, 70, 180, 0.507);
+  }
+  
+  .active {
+    background-color: #4c74af;
+  }
+
 
 img {
     width:300px;
     margin: 20px;
     border: 2px solid rgb(204, 0, 255);
     } 
+
+   
