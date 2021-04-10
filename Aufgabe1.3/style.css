@@ -1,44 +1,98 @@
+
+h1{
+  color: rgba(255, 72, 0, 0.856);
+}
+
+
+
+.header-text{
+background:rgba(255, 72, 0, 0.856);
+height: auto;
+width:900px;
+border-radius: 0px 0px 600px 600px;
+position: fixed relative;
+  
+font-size: 130pt;
+font-weight: bold;
+color: white;
+text-align: center;
+}
+
+.icon :hover:not(.active){
+  border-color: white;
+}
+.icon img{
+  width: 50px;
+  border-color: black;
+  border-width: thin;
+  border-style: solid;
+  border-width: 20px;
+}
+
+
 body{
+  position: fixed relative;
     background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L03/task_material/images/bg.png);
     font-family: Arial, sans-serif;
     text-align: center;
     text-decoration: none;
+    width: 800px;
+  border: 0px;
+  padding: 0px;
+  margin: 0px 15px 15px 15px;
 }
 
 
 ul{
-    list-style-type: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-
 }
 li {
-    float: right;
+  float: right;
   }
   
   li a {
+    color: white;
     display: block;
     padding: 8px;
-    background-color:white;
+    background-color:black;
   }
 
 li a:hover:not(.active) {
-    background-color:rgba(71, 70, 180, 0.507);
+    background-color:rgba(255, 72, 0, 0.856);
   }
+
+  
   
   .active {
-    background-color: #4c74af;
+    background-color: rgba(255, 72, 0, 0.856);
   }
-  nav#fixed {
+  nav{
     position: fixed;
   }
 
   img {
     width:300px;
     margin: 20px;
-    border: 2px solid rgb(204, 0, 255);
-    } 
-  }
+    border: 2px solid rgba(255, 72, 0, 0.856);
+    }
+
+
+  .formular{
+    position: left fixed;
+    background: none;
+    font-size: 20px;
+    color: grey;
+    width: 400px;
+    height: 400px;
+    padding: 5px 5px 5px 5px;
+    margin-left: 210px;
+    text-align: left;
+}
+#button{
+  color:grey;
+}
 
    
