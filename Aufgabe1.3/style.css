@@ -1,8 +1,8 @@
 body{
-    background-color:rgba(62, 15, 105, 0.507);
-    color:white;
-    padding: 10px 10px 10px 10px;
-    margin: 10px 10px 40px 10px;
+    background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L03/task_material/images/bg.png);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
 }
 
 
@@ -30,15 +30,15 @@ li a:hover:not(.active) {
   .active {
     background-color: #4c74af;
   }
+  nav#fixed {
+    position: fixed;
+  }
 
-
-img {
+  img {
     width:300px;
     margin: 20px;
     border: 2px solid rgb(204, 0, 255);
     } 
-  .img:hover {
-      border: 1px solid #777;
   }
 
    
