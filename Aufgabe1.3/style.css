@@ -31,7 +31,7 @@ text-align: center;
 
 
 body{
-  position: fixed relative;
+  position: relative;
     background-image: url(https://raw.githubusercontent.com/gabriel-rausch/EIA1-Material/master/L03/task_material/images/bg.png);
     font-family: Arial, sans-serif;
     text-align: center;
@@ -42,25 +42,28 @@ body{
   margin: 0px 15px 15px 15px;
 }
 
+header nav{
+  position: right;
+}
 
-ul{
+header nav ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-li {
+header nav ul li {
   float: right;
   }
   
-  li a {
+header nav ul li a {
     color: white;
     display: block;
     padding: 8px;
     background-color:black;
   }
 
-li a:hover:not(.active) {
+header nav ul li a:hover:not(.active) {
     background-color:rgba(255, 72, 0, 0.856);
   }
 
@@ -81,7 +84,6 @@ li a:hover:not(.active) {
 
 
   .formular{
-    position: left fixed;
     background: none;
     font-size: 20px;
     color: grey;
@@ -95,4 +97,56 @@ li a:hover:not(.active) {
   color:grey;
 }
 
+audio{
+  border: 2px solid rgba(255, 72, 0, 0.856);
+  width:300px;
+}
+
+iframe{
+  border: 2px solid rgba(255, 72, 0, 0.856);
+  width:300px;
+}
+iframe :hover:not(.active){
+  width:800px;
+}
+
+video{
+  border: 2px solid rgba(255, 72, 0, 0.856);
+  width:300px;
+}
+
+ol{
+  list-style: square;
+  background-color: rgba(255, 72, 0, 0.856);
+  padding:0px;
+}
+ol li{
+  text-align: center;
+  display: inline-block;
+  width: 400px;
+  padding: 5px;
+  color: white;
+}
+
+thead{
+  width: 800px;
+  background-color: rgba(255, 72, 0, 0.856);
+  color: azure;
+}
+tbody{
+  background-color: white;
+}
+table{
+  border-collapse: collapse;
+  border: 5px solid black;
+  letter-spacing: 1px;
+  font-size: 25px;
+}
+td, th{
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+td{
+  text-align: center;
+}
    
