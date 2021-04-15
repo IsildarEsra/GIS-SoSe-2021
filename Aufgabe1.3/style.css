@@ -1,9 +1,12 @@
 
 h1{
+  transition: color 2s ease-in-out 0s;
   color: rgba(255, 72, 0, 0.856);
 }
 
-
+h1:hover{
+  color:black;
+}
 
 .header-text{
   background:rgba(255, 72, 0, 0.856);
@@ -38,16 +41,13 @@ body{
   width: 800px;
   border: 0px;
   padding: 0px;
-  margin: 0px 15px 15px 15px;
-}
-
-header nav{
-  position: right;
+  margin: 0 auto;
 }
 
 header nav ul{
   list-style-type: none;
-  margin: 0;
+  margin-right: auto;
+  text-align: right;
   padding: 0;
   overflow: hidden;
 }
@@ -77,8 +77,11 @@ nav{
 }
 
 img {
-    width:300px;
-    margin: 20px;
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 50%;
+  
     border: 2px solid rgba(255, 72, 0, 0.856);
 }
 
@@ -90,12 +93,20 @@ img {
     width: 400px;
     height: 400px;
     padding: 5px 5px 5px 5px;
-    margin-left: 210px;
+    margin-right: auto;
     text-align: left;
 }
 
 #button{
   color:grey;
+}
+
+#medien{
+  width: 100%;
+}
+
+#selfie{
+  width: 50%;
 }
 
 audio{
