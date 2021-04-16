@@ -38,7 +38,7 @@ body{
   font-family: Arial, sans-serif;
   text-align: center;
   text-decoration: none;
-  width: 800px;
+  width: 600px;
   border: 0px;
   padding: 0px;
   margin: 0 auto;
@@ -167,5 +167,25 @@ td, th{
 
 td{
   text-align: center;
+}
+
+@media screen and (min-width: 601px) {
+  h1{
+    color: blue;
+  }
+  body{
+    width: 601px;
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
+  h1{
+    color:blueviolet;
+  }
+  body{
+    width: 1025px;
+  }
+
 }
    
