@@ -11,7 +11,7 @@ h1:hover{
 .header-text{
   background:rgba(255, 72, 0, 0.856);
   height: auto;
-  width:900px;
+  width:500px;
   border-radius: 0px 0px 600px 600px;
   position: fixed relative;
   font-size: 130pt;
@@ -38,7 +38,7 @@ body{
   font-family: Arial, sans-serif;
   text-align: center;
   text-decoration: none;
-  width: 600px;
+  width: 400px;
   border: 0px;
   padding: 0px;
   margin: 0 auto;
@@ -169,17 +169,21 @@ td{
   text-align: center;
 }
 
-@media screen and (min-width: 601px) {
+@media only screen and (min-width: 601px) {
   h1{
     color: blue;
   }
   body{
-    width: 601px;
+    width: 700px;
   }
+  .header-text{
+    width: auto;
+  }
+  
 
 }
 
-@media screen and (min-width: 1025px) {
+@media only screen and (min-width: 1025px) {
   h1{
     color:blueviolet;
   }
