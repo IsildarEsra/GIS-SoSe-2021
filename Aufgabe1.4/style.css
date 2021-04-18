@@ -4,6 +4,15 @@ h1{
   color: rgba(255, 72, 0, 0.856);
 }
 
+div h1{
+  color:rgba(187, 54, 2, 0.767)
+}
+
+h1+p {
+  color:royalblue;
+  text-shadow: fuchsia;
+}
+
 h1:hover{
   color:black;
 }
@@ -11,10 +20,10 @@ h1:hover{
 .header-text{
   background:rgba(255, 72, 0, 0.856);
   height: auto;
-  width:500px;
+  width:400px;
   border-radius: 0px 0px 600px 600px;
   position: fixed relative;
-  font-size: 130pt;
+  font-size: 25px;
   font-weight: bold;
   color: white;
   text-align: center;
@@ -25,7 +34,7 @@ h1:hover{
 }
 
 .icon img{
-  width: 50px;
+  width: 25px;
   border-color: black;
   border-width: thin;
   border-style: solid;
@@ -134,7 +143,7 @@ ol{
   padding:0px;
 }
 
-ol li{
+ol~li{
   text-align: center;
   font-size: 25px;
   display: inline-block;
@@ -153,7 +162,7 @@ tbody{
   background-color: white;
 }
 
-table{
+table * {
   border-collapse: collapse;
   border: 5px solid black;
   letter-spacing: 1px;
@@ -176,12 +185,16 @@ td{
   body{
     width: 700px;
   }
-  .header-text{
-    width: auto;
+  .icon img{
+    width: 40px;
   }
-  
+  .header-text{
+  font-size: 100pt;
+  background: blue;
+}
 
 }
+  
 
 @media only screen and (min-width: 1025px) {
   h1{
@@ -190,6 +203,17 @@ td{
   body{
     width: 1025px;
   }
-
+  img [alt=selfie]{
+    width: 25%;
+  }
+  .icon img{
+    width: 50px;
+  }
+  .header-text{
+    font-size: 130pt;
+    background:blueviolet;
+  }
 }
+
+
    
