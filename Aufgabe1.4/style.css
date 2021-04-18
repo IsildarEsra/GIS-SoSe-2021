@@ -9,8 +9,7 @@ div h1{
 }
 
 h1+p {
-  color:royalblue;
-  text-shadow: fuchsia;
+  color: hotpink;
 }
 
 h1:hover{
@@ -23,7 +22,7 @@ h1:hover{
   width:400px;
   border-radius: 0px 0px 600px 600px;
   position: fixed relative;
-  font-size: 25px;
+  font-size: 50px;
   font-weight: bold;
   color: white;
   text-align: center;
@@ -189,6 +188,9 @@ td{
     width: 40px;
   }
   .header-text{
+  width:600px; 
+  border-radius: 0px 0px 900px 900px; 
+  height: auto;
   font-size: 100pt;
   background: blue;
 }
@@ -210,8 +212,11 @@ td{
     width: 50px;
   }
   .header-text{
-    font-size: 130pt;
-    background:blueviolet;
+  width:1000px;  
+  border-radius: 0px 0px 6001500px 1500px;
+  height: auto;
+  font-size: 130pt;
+  background:blueviolet;
   }
 }
 
