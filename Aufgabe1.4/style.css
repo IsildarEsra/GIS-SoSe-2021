@@ -35,7 +35,7 @@ h1:hover{
 .icon img{
   width: 25px;
   border-color: black;
-  border-width: thin;
+  border-width: 2px;
   border-style: solid;
   border-width: 20px;
 }
