@@ -223,8 +223,6 @@ function schachbrett(): string {
             if (leerzeichen == "#") {
                 brett = brett + "#";
                 leerzeichen = " ";
-
-                
             }
             else {
                 brett = brett + "#";
@@ -241,14 +239,5 @@ function schachbrett(): string {
     }
     console.log(brett);
     return brett;
-
-
-
 }
-
-
 schachbrett();
-
-
-
-
