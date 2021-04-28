@@ -16,6 +16,8 @@ function func1(): void {
     console.log("Klar?");
 }
 //a) Es wird "Alles", "Logo!" und "Klar?" ausgegeben
+//erlaubt: kleingeschrieben und Zahlen
+//nicht erlaubt: Leerzeichen, Umlaute, Variabelnamen/Funktionen doppelt verwenden
 //b Zeile7, 8, 9 dann 13
 
 //c
@@ -90,13 +92,13 @@ function func3(): void {
 //Aufgabe5
 
 //a
-
-function multiply(x: number, y: number): void {
+/*
+multiply(3, 5);
+function multiply(x: number, y: number): number {
     let z: number = x * y;
-    console.log(z);
+    return z;
 }
-multiply(x, y);
-
+*/
 //b
 
 function max(x: number, y: number): void {
@@ -134,20 +136,20 @@ getRandom();
 
 //e
 
-let n: number = 5;
-let e: string;
 function factorial(n: number): void {
+    let fakultat: number = n;
     if (n < 1) {
         console.log(1);
     } else {
         do {
-            e = n + "*";
-            console.log(e);
-            break;
+            fakultat = fakultat * (n - 1);
+            n = n - 1;
+
+            console.log(fakultat);
         } while (n > 1);
     }
 }
-factorial(n);
+factorial(4);
 
 //f
 
