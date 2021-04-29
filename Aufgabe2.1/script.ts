@@ -22,18 +22,18 @@ function func1(): void {
 
 //c
 
-function a1(): void {
+function a2(): void {
     let x: string = "Alles";
     console.log();
-    func1(x);
     func2(x);
+    func3(x);
     console.log(x + " " + "Logo!");
 }
-a1();
-function func1(x: string ): void {
+a2();
+function func2(x: string ): void {
     console.log(x + " " + "Klar?");
 }
-function func2(x: string): void {
+function func3(x: string): void {
     console.log(x + " " + "Gute!");
 }
 
@@ -44,7 +44,7 @@ function func2(x: string): void {
 
 //Aufgabe2
 
-function a2(): void {
+function a7(): void {
     let i: number = 9;
 
     do {
@@ -53,7 +53,7 @@ function a2(): void {
     } while ( i > 0);
 }
 
-a2();
+a7();
 //das Programm zählt von 9 runter, solange die Zahl größer als 0 ist.
 
 
@@ -61,23 +61,23 @@ a2();
 
 let x: string = "Hallo";
 console.log(x);
-func1(x);
+func4(x);
 console.log(x);
-func2();
-func3();
+func5();
+func6();
 console.log(x);
 
-function func1(y: string): void {
+function func4(y: string): void {
     y = "Bla";
     console.log(y);
 }
 
-function func2(): void {
+function func5(): void {
     let x: string = "Blubb";
     console.log(x);
 }
 
-function func3(): void {
+function func6(): void {
     x = "Test";
 }
 //a) Hallo Bla Hallo Blubb Test wird ausgegeben
@@ -109,7 +109,7 @@ function max(x: number, y: number): void {
         console.log(x);
     }
 }
-max(x, y);
+max(4, 7);
 
 //c
 
@@ -128,7 +128,7 @@ schleife();
 
 function getRandom(): void {
     for (let i: number = 0; i < 10; i++) {
-        var random = Math.floor(Math.random() * 100) + 1;
+        let random: number  = Math.floor(Math.random() * 100) + 1;
         console.log(random);
     }
 }
@@ -216,7 +216,7 @@ fizzBuzz();
 
 //d
 
-function schachbrett(): string {
+function schach(): string {
     let brett: string = "";
     let leerzeichen: string = " ";
 
@@ -242,4 +242,28 @@ function schachbrett(): string {
     console.log(brett);
     return brett;
 }
-schachbrett();
+schach();
+
+//e
+
+
+let groesse: number = 4;
+schachbrett(groesse);
+
+function schachbrett(gr: number): void {
+    let brett: string = " ";
+    for (let zeilen: number = 1; zeilen < gr + 1; zeilen++) {
+        for (let position: number = 1; position < gr + 1 ; position++) {
+            if (zeilen % 2 !== 0 && position % 2 !== 0 || zeilen % 2 == 0 && position % 2 == 0) {
+                brett = brett + " ";
+            }
+            else {
+                brett = brett + "#";
+            }
+        }
+        brett = brett + "\n"; 
+    }    
+    console.log(brett);
+
+}
+
