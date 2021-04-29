@@ -13,49 +13,51 @@ function func1() {
     console.log("Klar?");
 }
 //a) Es wird "Alles", "Logo!" und "Klar?" ausgegeben
+//erlaubt: kleingeschrieben und Zahlen
+//nicht erlaubt: Leerzeichen, Umlaute, Variabelnamen/Funktionen doppelt verwenden
 //b Zeile7, 8, 9 dann 13
 //c
-function a1() {
+function a2() {
     let x = "Alles";
     console.log();
-    func1(x);
     func2(x);
+    func3(x);
     console.log(x + " " + "Logo!");
 }
-a1();
-function func1(x) {
+a2();
+function func2(x) {
     console.log(x + " " + "Klar?");
 }
-function func2(x) {
+function func3(x) {
     console.log(x + " " + "Gute!");
 }
 //Aufgabe2
-function a2() {
+function a7() {
     let i = 9;
     do {
         console.log(i);
         i = i - 1;
     } while (i > 0);
 }
-a2();
+a7();
 //das Programm zählt von 9 runter, solange die Zahl größer als 0 ist.
 //Aufgabe4
 let x = "Hallo";
 console.log(x);
-func1(x);
+func4(x);
 console.log(x);
-func2();
-func3();
+func5();
+func6();
 console.log(x);
-function func1(y) {
+function func4(y) {
     y = "Bla";
     console.log(y);
 }
-function func2() {
+function func5() {
     let x = "Blubb";
     console.log(x);
 }
-function func3() {
+function func6() {
     x = "Test";
 }
 //a) Hallo Bla Hallo Blubb Test wird ausgegeben
@@ -67,11 +69,10 @@ function func3() {
 //Beide werden mit Variablen benannt und werden durch diese aufgerufen
 //Aufgabe5
 //a
+multiply(3, 5);
 function multiply(x, y) {
-    let z = x * y;
-    console.log(z);
+    return x * y;
 }
-multiply(x, y);
 //b
 function max(x, y) {
     if (x < y) {
@@ -81,7 +82,7 @@ function max(x, y) {
         console.log(x);
     }
 }
-max(x, y);
+max(4, 7);
 //c
 function schleife() {
     let i = 1;
@@ -96,27 +97,26 @@ schleife();
 //d
 function getRandom() {
     for (let i = 0; i < 10; i++) {
-        var random = Math.floor(Math.random() * 100) + 1;
+        let random = Math.floor(Math.random() * 100) + 1;
         console.log(random);
     }
 }
 getRandom();
 //e
-let n = 5;
-let e;
 function factorial(n) {
+    let fakultat = n;
     if (n < 1) {
         console.log(1);
     }
     else {
         do {
-            e = n + "*";
-            console.log(e);
-            break;
+            fakultat = fakultat * (n - 1);
+            n = n - 1;
         } while (n > 1);
     }
+    return fakultat;
 }
-factorial(n);
+console.log(factorial(4));
 //f
 function leapyears() {
     for (let schaltjahr = 1900; schaltjahr < 2021; schaltjahr++) {
@@ -173,7 +173,7 @@ function fizzBuzz() {
 }
 fizzBuzz();
 //d
-function schachbrett() {
+function schach() {
     let brett = "";
     let leerzeichen = " ";
     for (let laenge = 0; laenge < 8; laenge++) {
@@ -198,5 +198,23 @@ function schachbrett() {
     console.log(brett);
     return brett;
 }
-schachbrett();
+schach();
+//e
+let groesse = 40;
+schachbrett(groesse);
+function schachbrett(gr) {
+    let brett = " ";
+    for (let zeilen = 1; zeilen < gr + 1; zeilen++) {
+        for (let position = 1; position < gr + 1; position++) {
+            if (zeilen % 2 !== 0 && position % 2 !== 0 || zeilen % 2 == 0 && position % 2 == 0) {
+                brett = brett + " ";
+            }
+            else {
+                brett = brett + "#";
+            }
+        }
+        brett = brett + "\n";
+    }
+    console.log(brett);
+}
 //# sourceMappingURL=script.js.map

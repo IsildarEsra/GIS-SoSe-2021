@@ -95,8 +95,7 @@ function func6(): void {
 
 multiply(3, 5);
 function multiply(x: number, y: number): number {
-    let z: number = x * y;
-    return z;
+    return x * y ;
 }
 
 //b
