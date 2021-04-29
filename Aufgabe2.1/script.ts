@@ -78,7 +78,7 @@ function func5(): void {
 }
 
 function func6(): void {
-    x = "Test";
+     x = "Test";
 }
 //a) Hallo Bla Hallo Blubb Test wird ausgegeben
 //b) global: kann von überall darauf zugegriffen werden
@@ -92,13 +92,13 @@ function func6(): void {
 //Aufgabe5
 
 //a
-/*
+
 multiply(3, 5);
 function multiply(x: number, y: number): number {
     let z: number = x * y;
     return z;
 }
-*/
+
 //b
 
 function max(x: number, y: number): void {
@@ -136,7 +136,7 @@ getRandom();
 
 //e
 
-function factorial(n: number): void {
+function factorial(n: number): number {
     let fakultat: number = n;
     if (n < 1) {
         console.log(1);
@@ -145,11 +145,11 @@ function factorial(n: number): void {
             fakultat = fakultat * (n - 1);
             n = n - 1;
 
-            console.log(fakultat);
         } while (n > 1);
     }
+    return fakultat;
 }
-factorial(4);
+console.log(factorial(4));
 
 //f
 
@@ -247,7 +247,7 @@ schach();
 //e
 
 
-let groesse: number = 4;
+let groesse: number = 40;
 schachbrett(groesse);
 
 function schachbrett(gr: number): void {
@@ -266,4 +266,3 @@ function schachbrett(gr: number): void {
     console.log(brett);
 
 }
-
