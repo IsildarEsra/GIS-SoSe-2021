@@ -80,3 +80,36 @@ class Studi {           //5.
 let studi: Studi = new Studi(); //zeigen dass man neuen Student erstellt
 studi.erstelleStudi ("Leyla", 22, 876543); //neuen Student füllen 
 studi.showInfo(); //Info über neuen Student zeigen
+
+//Aufgabe2a
+let nummerArray: number [] = [3, 4, 8, 15, 18]; //NummerArray erstellen
+function backwards(): void {
+    nummerArray.reverse();                      // reverse-Befehl
+}
+console.log(nummerArray.reverse());             // Ausgabe
+backwards();
+
+//Aufgabe2b
+function join(array1: number[], array2: number[]): number[] {
+    let joined: number[] = [array1.length + array2.length];
+
+    for (let i: number = 0; i < array1.length; i++) {
+        joined[i] = array1[i];
+    }
+    for (let i: number = 0; i < array2.length; i++) {
+        joined[i + array1.length] = array2[i];
+    }
+    return joined;
+}
+console.log(join([12, 2000, 88], [15, 9001, -440]));
+
+//Aufgabe2c
+let arr: number[] = [5, 42, 17, 2018, -10, 60, -10010];
+function split(_arr: number[], _ersteNummer: number, _zweiteNummer: number): number [] {
+    let arrayMittig: number [] = [];
+    for (let i: number = _ersteNummer; i <= _zweiteNummer; i++) {
+        arrayMittig.push(_arr[i]);
+    } 
+    return arrayMittig;
+    }
+console.log(split(arr, 1, 2));

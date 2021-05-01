@@ -65,4 +65,33 @@ class Studi {
 let studi = new Studi(); //zeigen dass man neuen Student erstellt
 studi.erstelleStudi("Leyla", 22, 876543); //neuen Student füllen 
 studi.showInfo(); //Info über neuen Student zeigen
+//Aufgabe2a
+let nummerArray = [3, 4, 8, 15, 18]; //NummerArray erstellen
+function backwards() {
+    nummerArray.reverse(); // reverse-Befehl
+}
+console.log(nummerArray.reverse()); // Ausgabe
+backwards();
+//Aufgabe2b
+function join(array1, array2) {
+    let joined = [array1.length + array2.length];
+    for (let i = 0; i < array1.length; i++) {
+        joined[i] = array1[i];
+    }
+    for (let i = 0; i < array2.length; i++) {
+        joined[i + array1.length] = array2[i];
+    }
+    return joined;
+}
+console.log(join([12, 2000, 88], [15, 9001, -440]));
+//Aufgabe2c
+let arr = [5, 42, 17, 2018, -10, 60, -10010];
+function split(_arr, _ersteNummer, _zweiteNummer) {
+    let arrayMittig = [];
+    for (let i = _ersteNummer; i <= _zweiteNummer; i++) {
+        arrayMittig.push(_arr[i]);
+    }
+    return arrayMittig;
+}
+console.log(split(arr, 1, 2));
 //# sourceMappingURL=script.js.map
