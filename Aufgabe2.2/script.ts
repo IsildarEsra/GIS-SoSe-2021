@@ -116,10 +116,66 @@ console.log(split(arr, 1, 2));
 
 //Aufgabe3a
 
-let testCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("Canvas_a");
-let testContext: CanvasRenderingContext2D = testCanvas.getContext("2d");
+let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("Canvas_a");
 
-testContext.beginPath();
+let contextBoden: CanvasRenderingContext2D = canvas.getContext("2d");
+contextBoden.fillStyle = "lightgreen";
+contextBoden.fillRect (10, 300, 400, 50);
 
-testContext.fillStyle = "green";
-testContext.fillRect(0, 200, 350, 130);
+let contextHimmel: CanvasRenderingContext2D = canvas.getContext("2d");
+contextHimmel.fillStyle = "lightblue";
+contextHimmel.fillRect (10, 10, 400, 300);
+
+let contextWolke: CanvasRenderingContext2D = canvas.getContext("2d");
+contextWolke.fillStyle = "white";
+contextWolke.beginPath();
+contextWolke.ellipse(310, 60, 40, 70, Math.PI / 3, 0, 2 * Math.PI);
+contextWolke.fill();
+
+let contextHaus: CanvasRenderingContext2D = canvas.getContext("2d");
+contextHaus.fillStyle = "yellow";
+contextHaus.fillRect (150, 210, 100, 100);
+
+let contextDach: CanvasRenderingContext2D = canvas.getContext("2d");
+contextDach.fillStyle = "brown";
+contextDach.beginPath();
+contextDach.moveTo (150, 210);
+contextDach.lineTo (200, 160);
+contextDach.lineTo (250, 210);
+contextDach.fill();
+
+let contextBaumstamm: CanvasRenderingContext2D = canvas.getContext("2d");
+contextBaumstamm.fillStyle = "brown";
+contextBaumstamm.fillRect (70, 210, 15, 100);
+
+let contextBaumkrone: CanvasRenderingContext2D = canvas.getContext("2d");
+contextBaumkrone.fillStyle = "green";
+contextBaumkrone.beginPath();
+contextBaumkrone.ellipse(70, 210, 65, 70, Math.PI / 3, 0, 2 * Math.PI);
+contextBaumkrone.fill();
+
+//Aufgabe3b
+
+class Rechteck {
+    canvas2: HTMLCanvasElement = <HTMLCanvasElement> document.getElementById("Canvas_b");
+    contextRechteck: CanvasRenderingContext2D = this.canvas2.getContext("2d");
+    breit: number;
+    hoch: number; 
+    x: number;
+    y: number;
+
+    constructor(_x: number, _y: number, _breit: number, _hoch: number) {
+        this.x = _x;
+        this.y = _y;
+        this.breit = _breit;
+        this.hoch = _hoch;
+    }
+    Rechteck (): void {
+        this.contextRechteck.strokeRect(this.x, this.y, this.breit, this.hoch);
+    }
+}
+let rechteck1: Rechteck = new Rechteck (50, 70 , 50, 70);
+rechteck1.Rechteck();
+
+
+

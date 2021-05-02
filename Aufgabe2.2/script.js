@@ -94,4 +94,51 @@ function split(_arr, _ersteNummer, _zweiteNummer) {
     return arrayMittig;
 }
 console.log(split(arr, 1, 2));
+//Aufgabe3a
+let canvas = document.getElementById("Canvas_a");
+let contextBoden = canvas.getContext("2d");
+contextBoden.fillStyle = "lightgreen";
+contextBoden.fillRect(10, 300, 400, 50);
+let contextHimmel = canvas.getContext("2d");
+contextHimmel.fillStyle = "lightblue";
+contextHimmel.fillRect(10, 10, 400, 300);
+let contextWolke = canvas.getContext("2d");
+contextWolke.fillStyle = "white";
+contextWolke.beginPath();
+contextWolke.ellipse(310, 60, 40, 70, Math.PI / 3, 0, 2 * Math.PI);
+contextWolke.fill();
+let contextHaus = canvas.getContext("2d");
+contextHaus.fillStyle = "yellow";
+contextHaus.fillRect(150, 210, 100, 100);
+let contextDach = canvas.getContext("2d");
+contextDach.fillStyle = "brown";
+contextDach.beginPath();
+contextDach.moveTo(150, 210);
+contextDach.lineTo(200, 160);
+contextDach.lineTo(250, 210);
+contextDach.fill();
+let contextBaumstamm = canvas.getContext("2d");
+contextBaumstamm.fillStyle = "brown";
+contextBaumstamm.fillRect(70, 210, 15, 100);
+let contextBaumkrone = canvas.getContext("2d");
+contextBaumkrone.fillStyle = "green";
+contextBaumkrone.beginPath();
+contextBaumkrone.ellipse(70, 210, 65, 70, Math.PI / 3, 0, 2 * Math.PI);
+contextBaumkrone.fill();
+//Aufgabe3b
+class Rechteck {
+    constructor(_x, _y, _breit, _hoch) {
+        this.canvas2 = document.getElementById("Canvas_b");
+        this.contextRechteck = this.canvas2.getContext("2d");
+        this.x = _x;
+        this.y = _y;
+        this.breit = _breit;
+        this.hoch = _hoch;
+    }
+    Rechteck() {
+        this.contextRechteck.strokeRect(this.x, this.y, this.breit, this.hoch);
+    }
+}
+let rechteck1 = new Rechteck(50, 70, 50, 70);
+rechteck1.Rechteck();
 //# sourceMappingURL=script.js.map
