@@ -141,4 +141,36 @@ class Rechteck {
 }
 let rechteck1 = new Rechteck(50, 70, 50, 70);
 rechteck1.Rechteck();
+//Aufgabe3c und d
+class Rechte {
+    constructor() {
+        this.canvas3 = document.getElementById("Canvas_c");
+        this.contextRechteck = this.canvas3.getContext("2d");
+        this.x = Math.random() * (300 - 0);
+        this.y = Math.random() * (300 - 0);
+        this.breit = Math.random() * (300 - 0);
+        this.hoch = Math.random() * (300 - 0);
+    }
+    drawRect() {
+        this.contextRechteck.fillStyle = "pink";
+        this.contextRechteck.fillRect(this.x, this.y, this.breit, this.hoch);
+    }
+}
+let rechteckzufall = new Rechte();
+rechteckzufall.drawRect();
+//Aufgabee
+class Rechtecke {
+    constructor() {
+        this.canvas3 = document.getElementById("Canvas_e");
+        this.contextRechteck = this.canvas3.getContext("2d");
+        this.x = Math.random() * (300 - 0);
+        this.y = Math.random() * (300 - 0);
+        this.breit = Math.random() * (300 - 0);
+        this.hoch = Math.random() * (300 - 0);
+    }
+    drawRect() {
+        this.contextRechteck.fillStyle = "pink";
+        this.contextRechteck.fillRect(this.x, this.y, this.breit, this.hoch); //Bis hier gleich wie bei c und d aber mein array hatte nicht funktioniert also weiß ich nicht was ich machen soll
+    }
+}
 //# sourceMappingURL=script.js.map

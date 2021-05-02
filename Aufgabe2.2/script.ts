@@ -177,5 +177,49 @@ class Rechteck {
 let rechteck1: Rechteck = new Rechteck (50, 70 , 50, 70);
 rechteck1.Rechteck();
 
+//Aufgabe3c und d
+
+class Rechte {
+    canvas3: HTMLCanvasElement = <HTMLCanvasElement> document.getElementById("Canvas_c");
+    contextRechteck: CanvasRenderingContext2D = this.canvas3.getContext("2d");
+    breit: number;
+    hoch: number; 
+    x: number;
+    y: number;
+
+    constructor() {
+        this.x = Math.random() * (300 - 0);
+        this.y = Math.random() * (300 - 0);
+        this.breit = Math.random() * (300 - 0);
+        this.hoch = Math.random() * (300 - 0);
+    }
+    drawRect(): void {
+        this.contextRechteck.fillStyle = "pink";
+        this.contextRechteck.fillRect(this.x, this.y, this.breit, this.hoch);
+    }
+}
+let rechteckzufall: Rechte = new Rechte();
+rechteckzufall.drawRect();
+
+//Aufgabee
+class Rechtecke {
+    canvas3: HTMLCanvasElement = <HTMLCanvasElement> document.getElementById("Canvas_e");
+    contextRechteck: CanvasRenderingContext2D = this.canvas3.getContext("2d");
+    breit: number;
+    hoch: number; 
+    x: number;
+    y: number;
+
+    constructor() {
+        this.x = Math.random() * (300 - 0);
+        this.y = Math.random() * (300 - 0);
+        this.breit = Math.random() * (300 - 0);
+        this.hoch = Math.random() * (300 - 0);          
+    }                                               
+    drawRect(): void {
+        this.contextRechteck.fillStyle = "pink";
+        this.contextRechteck.fillRect(this.x, this.y, this.breit, this.hoch);   //Bis hier gleich wie bei c und d aber mein array hatte nicht funktioniert also weiß ich nicht was ich machen soll
+    }
+}
 
 
