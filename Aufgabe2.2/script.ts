@@ -113,3 +113,13 @@ function split(_arr: number[], _ersteNummer: number, _zweiteNummer: number): num
     return arrayMittig;
     }
 console.log(split(arr, 1, 2));
+
+//Aufgabe3a
+
+let testCanvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("Canvas_a");
+let testContext: CanvasRenderingContext2D = testCanvas.getContext("2d");
+
+testContext.beginPath();
+
+testContext.fillStyle = "green";
+testContext.fillRect(0, 200, 350, 130);
