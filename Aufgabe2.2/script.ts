@@ -14,6 +14,7 @@ function min(...nummern: number[]): number {
 console.log(min(5, 3, 2, 6));
 
 //Aufgabe1b
+/*
 function isEven(nummer: number): boolean {
     if (nummer == 0) {
         return true;
@@ -29,6 +30,20 @@ function isEven(nummer: number): boolean {
     }
 }
 console.log(isEven(-1)); //Bei -1 kommt ein Error, also muss man noch ein else if hinzufügen, dass bei negativen Zahlen das Vorzeichen ändert. Danach kommt dann false raus.
+*/
+function isEven(_nummer: number): boolean {
+    if (_nummer == 0) return true;
+    if (_nummer == 1) return false;
+  
+    let result: boolean;
+
+    if (_nummer > 0)
+  result = isEven(_nummer - 2);
+    if (_nummer < 0)
+  result = isEven(_nummer + 2);
+    return result;
+}
+console.log(isEven(-1));
 
 //Aufgabe1c
 interface Student {     //1.
@@ -82,12 +97,25 @@ studi.erstelleStudi ("Leyla", 22, 876543); //neuen Student füllen
 studi.showInfo(); //Info über neuen Student zeigen
 
 //Aufgabe2a
+/*
 let nummerArray: number [] = [3, 4, 8, 15, 18]; //NummerArray erstellen
 function backwards(): void {
     nummerArray.reverse();                      // reverse-Befehl
 }
 console.log(nummerArray.reverse());             // Ausgabe
 backwards();
+*/
+let nummerArray: number [] = [3, 4, 8, 15, 18];
+let nummerArrayBack: number[] = backwards(nummerArray);
+function backwards(_arr: number[]): number[] {
+  let reversed: number[] = [];
+  for (let i: number = _arr.length; i > 0; i--) {
+    reversed.push(_arr[i - 1]);
+  }
+  return reversed;
+}
+console.log(nummerArray);
+console.log(nummerArrayBack);
 
 //Aufgabe2b
 function join(array1: number[], array2: number[]): number[] {
@@ -221,5 +249,10 @@ class Rechtecke {
         this.contextRechteck.fillRect(this.x, this.y, this.breit, this.hoch);   //Bis hier gleich wie bei c und d aber mein array hatte nicht funktioniert also weiß ich nicht was ich machen soll
     }
 }
-
+let rechteckArray: Rechtecke[] = [];
+    
+for (let i: number = 0; i < 5; i++) {
+        rechteckArray.push(new Rechtecke());
+        rechteckArray[i].drawRect();
+    }
 

@@ -14,7 +14,8 @@ function min(...nummern) {
 }
 console.log(min(5, 3, 2, 6));
 //Aufgabe1b
-function isEven(nummer) {
+/*
+function isEven(nummer: number): boolean {
     if (nummer == 0) {
         return true;
     }
@@ -22,13 +23,27 @@ function isEven(nummer) {
         return false;
     }
     else if (nummer < 0) {
-        return isEven(-nummer); //Hier wird bei negativen Zahlen das Vorzeichen geändert - * - = +
+    return isEven(-nummer); //Hier wird bei negativen Zahlen das Vorzeichen geändert - * - = +
     }
     else {
         return isEven(nummer - 2);
     }
 }
 console.log(isEven(-1)); //Bei -1 kommt ein Error, also muss man noch ein else if hinzufügen, dass bei negativen Zahlen das Vorzeichen ändert. Danach kommt dann false raus.
+*/
+function isEven(_nummer) {
+    if (_nummer == 0)
+        return true;
+    if (_nummer == 1)
+        return false;
+    let result;
+    if (_nummer > 0)
+        result = isEven(_nummer - 2);
+    if (_nummer < 0)
+        result = isEven(_nummer + 2);
+    return result;
+}
+console.log(isEven(-1));
 let s1 = { name: "Laura", alter: 20, matrikel: 123456 }; //2.
 let s2 = { name: "Susie", alter: 19, matrikel: 654321 };
 let s3 = { name: "Lena", alter: 19, matrikel: 456123 };
@@ -66,12 +81,25 @@ let studi = new Studi(); //zeigen dass man neuen Student erstellt
 studi.erstelleStudi("Leyla", 22, 876543); //neuen Student füllen 
 studi.showInfo(); //Info über neuen Student zeigen
 //Aufgabe2a
-let nummerArray = [3, 4, 8, 15, 18]; //NummerArray erstellen
-function backwards() {
-    nummerArray.reverse(); // reverse-Befehl
+/*
+let nummerArray: number [] = [3, 4, 8, 15, 18]; //NummerArray erstellen
+function backwards(): void {
+    nummerArray.reverse();                      // reverse-Befehl
 }
-console.log(nummerArray.reverse()); // Ausgabe
+console.log(nummerArray.reverse());             // Ausgabe
 backwards();
+*/
+let nummerArray = [3, 4, 8, 15, 18];
+let nummerArrayBack = backwards(nummerArray);
+function backwards(_arr) {
+    let reversed = [];
+    for (let i = _arr.length; i > 0; i--) {
+        reversed.push(_arr[i - 1]);
+    }
+    return reversed;
+}
+console.log(nummerArray);
+console.log(nummerArrayBack);
 //Aufgabe2b
 function join(array1, array2) {
     let joined = [array1.length + array2.length];
@@ -172,5 +200,10 @@ class Rechtecke {
         this.contextRechteck.fillStyle = "pink";
         this.contextRechteck.fillRect(this.x, this.y, this.breit, this.hoch); //Bis hier gleich wie bei c und d aber mein array hatte nicht funktioniert also weiß ich nicht was ich machen soll
     }
+}
+let rechteckArray = [];
+for (let i = 0; i < 5; i++) {
+    rechteckArray.push(new Rechtecke());
+    rechteckArray[i].drawRect();
 }
 //# sourceMappingURL=script.js.map
