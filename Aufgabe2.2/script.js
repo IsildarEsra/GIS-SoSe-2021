@@ -161,8 +161,8 @@ rechteckzufall.drawRect();
 //Aufgabee
 class Rechtecke {
     constructor() {
-        this.canvas3 = document.getElementById("Canvas_e");
-        this.contextRechteck = this.canvas3.getContext("2d");
+        this.canvas4 = document.getElementById("Canvas_e");
+        this.contextRechteck = this.canvas4.getContext("2d");
         this.x = Math.random() * (300 - 0);
         this.y = Math.random() * (300 - 0);
         this.breit = Math.random() * (300 - 0);

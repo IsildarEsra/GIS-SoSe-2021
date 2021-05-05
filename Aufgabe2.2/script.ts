@@ -203,8 +203,8 @@ rechteckzufall.drawRect();
 
 //Aufgabee
 class Rechtecke {
-    canvas3: HTMLCanvasElement = <HTMLCanvasElement> document.getElementById("Canvas_e");
-    contextRechteck: CanvasRenderingContext2D = this.canvas3.getContext("2d");
+    canvas4: HTMLCanvasElement = <HTMLCanvasElement> document.getElementById("Canvas_e");
+    contextRechteck: CanvasRenderingContext2D = this.canvas4.getContext("2d");
     breit: number;
     hoch: number; 
     x: number;
