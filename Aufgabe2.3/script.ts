@@ -1,11 +1,12 @@
 //Aufgabe1
+namespace Aufgabe2_3 {
 class Rect {
     width: number;
     height: number;
     x: number;
     y: number;
     color: string;
-    constructor(_width?: number, _height?: number, _x?: number, _y?: number, _color?: string) { // Übergabeparameter sind optional
+    constructor(_width?: number, _height?: number, _x?: number, _y?: number, _color?: string) { 
         this.width = _width || Math.random() * 100;
         this.height = _height || Math.random() * 100;
         this.x = _x || Math.random() * 100;
@@ -29,3 +30,4 @@ rectArray.forEach(rect => drawRect(rect));
 
 document.querySelector("#reloadButton").addEventListener("click", () => location.reload());
 document.querySelector("#rectButton").addEventListener("click", () => drawRect(new Rect()));
+}
