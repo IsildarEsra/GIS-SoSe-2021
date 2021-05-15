@@ -21,23 +21,31 @@ function eisDiv(_auswahl, _index) {
     button.innerText = "auswählen";
     button.addEventListener("click", auswahlEndergebnis);
     div.appendChild(button);
+    if ((document.querySelector("title").getAttribute("id") == "ErsteWahl")) {
+        button.addEventListener("click", auswahlWaffel); //Entschiedung, wann welche Funktion bzw. Seite aufgerufen wird
+    }
     if ((document.querySelector("title").getAttribute("id") == "ZweiteWahl")) {
-        button.addEventListener("click", auswahlKugel);
-        div.appendChild(button);
-        function auswahlKugel(_event) {
-            console.log(_auswahl.sorte);
-            sessionStorage.setItem("ZweiteWahl", _auswahl.image);
-        }
+        button.addEventListener("click", auswahlKugel); //Entschiedung, wann welche Funktion bzw. Seite aufgerufen wird
     }
     if ((document.querySelector("title").getAttribute("id") == "DritteWahl")) {
-        button.addEventListener("click", auswahlTopping);
-        div.appendChild(button);
-        function auswahlTopping(_event) {
-            console.log(_auswahl.sorte);
-            sessionStorage.setItem("DritteWahl", _auswahl.image);
-        }
+        button.addEventListener("click", auswahlSahne); //Entschiedung, wann welche Funktion bzw. Seite aufgerufen wird
     }
     return div;
+    function auswahlWaffel(_event) {
+        console.log(_auswahl.sorte); //Auskunft noch als Überprüfung dringelassen 
+        sessionStorage.setItem("image1", _auswahl.image);
+        location.href = "Kugel.html"; //direktes weiterleiten zur nächsten Seite
+    }
+    function auswahlKugel(_event) {
+        console.log(_auswahl.sorte);
+        sessionStorage.setItem("image2", _auswahl.image);
+        location.href = "Sahne.html";
+    }
+    function auswahlSahne(_event) {
+        console.log(_auswahl.sorte);
+        sessionStorage.setItem("image3", _auswahl.image);
+        location.href = "Endprodukt.html";
+    }
     function auswahlEndergebnis(_event) {
         console.log(_auswahl.sorte);
         //Aufgabe1.b
