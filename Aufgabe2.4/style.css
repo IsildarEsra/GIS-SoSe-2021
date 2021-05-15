@@ -1,0 +1,73 @@
+body {
+    background-color: royalblue;
+    text-align: center;
+    position: relative;
+}
+h1 {
+    transition: color 2s ease-in-out 0s;
+    color:white;
+    text-shadow: grey;
+    text-align: center;
+}
+
+h1:hover{
+    color:black;
+}
+
+h2{
+    color:white;
+    text-align: center;
+}
+
+#Option1{
+    color: skyblue;
+    background-color:black;
+    margin: 10px 20px 10px 10px;
+    text-align: center;
+}
+
+#Option2{
+    color: skyblue;
+    background-color:black;
+    margin: 10px 20px 10px 10px;
+    text-align: center;
+}
+
+#Option3{
+    color: skyblue;
+    background-color:black;
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+button:hover{
+    padding: 5px 5px 5px 5px;
+}
+
+thead{
+    width: 800px;
+    background-color: skyblue;
+    color: white;
+  }
+  
+  tbody{
+    background-color: skyblue;
+  }
+  
+  table * {
+    border-collapse: collapse;
+    border: 5px solid black;
+    letter-spacing: 1px;
+    font-size: 25px;
+    
+    
+  }
+  
+  td, th{
+    border: 1px solid black;
+    padding: 5px 10px;
+  }
+  
+  td{
+    text-align: center;
+  }
