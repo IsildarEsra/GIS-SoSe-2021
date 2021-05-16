@@ -1,105 +1,102 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+//Bei mir werden die Bilder nicht angezeigt und ich weiß nicht, ob es an meinem JSON-String liegt, oder bei den Funktionen, die sie anzeigen sollen :( Oder ob ich einfach nur den Pfad zu meinen Bildern falsch getippt hab
 const data_1 = require("./data");
+function divEis(_auswahl, _index) {
+    let div = document.createElement("div");
+    div.classList.add("Eisergebnis");
+    let img = document.createElement("img");
+    img.src = _auswahl.image;
+    div.appendChild(img);
+    let span = document.createElement("span");
+    span.innerText = _auswahl.sorte;
+    div.appendChild(span);
+    let button = document.createElement("button");
+    button.innerText = "wahl";
+    div.appendChild(button);
+    if ((document.querySelector("title").getAttribute("id") == "Waffel")) {
+        button.addEventListener("click", auswahlWaffel);
+    }
+    if ((document.querySelector("title").getAttribute("id") == "Kugel")) {
+        button.addEventListener("click", auswahlKugel);
+    }
+    if ((document.querySelector("title").getAttribute("id") == "Sahne")) {
+        button.addEventListener("click", auswahlSahne);
+    }
+    return div;
+    //Daten in SessionStorage speichern
+    function auswahlWaffel(_event) {
+        console.log(_auswahl.sorte);
+        sessionStorage.setItem("Waffel", _auswahl.image);
+        location.href = "Kugel.html";
+    }
+    function auswahlKugel(_event) {
+        console.log(_auswahl.sorte);
+        sessionStorage.setItem("Kugel", _auswahl.image);
+        location.href = "Sahne.html";
+    }
+    function auswahlSahne(_event) {
+        console.log(_auswahl.sorte);
+        sessionStorage.setItem("Sahne", _auswahl.image);
+        location.href = "Endprodukt.html";
+    }
+}
+//Aufgabe1.c 
+function auswahlZeigen(_auswahl) {
+    let anzeige = document.getElementById("Auswahl");
+    if (document.querySelector("title").getAttribute("id") == "Waffel") {
+        for (let i = 0; i < _auswahl.waffeln.length; i++) {
+            let div = divEis(_auswahl.waffeln[i], i);
+            anzeige.appendChild(div);
+        }
+    }
+    else if (document.querySelector("title").getAttribute("id") == "Kugel") {
+        for (let i = 0; i < _auswahl.kugeln.length; i++) {
+            let div = divEis(_auswahl.kugeln[i], i);
+            anzeige.appendChild(div);
+        }
+    }
+    else if (document.querySelector("title").getAttribute("id") == "Sahne") {
+        for (let i = 0; i < _auswahl.sahnes.length; i++) {
+            let div = divEis(_auswahl.sahnes[i], i);
+            anzeige.appendChild(div);
+        }
+    }
+}
 //Aufgabe1.a
+//Ich weiß nicht was hier falsch ist aber wenn ich die import { auswahlJSON } from "./data"; Zeile nicht drinnen habe wird mir das immer rot unterstrichen
 let eis = konvertieren();
 function konvertieren() {
     let auswahl = JSON.parse(data_1.auswahlJSON);
     return (auswahl);
 }
 auswahlZeigen(eis);
-function eisDiv(_auswahl, _index) {
-    let div = document.createElement("div");
-    div.classList.add("Eisergebnis");
-    let image = document.createElement("img");
-    image.src = _auswahl.image;
-    div.appendChild(image);
-    let span = document.createElement("span");
-    span.innerText = _auswahl.sorte;
-    div.appendChild(span);
-    let button = document.createElement("button");
-    button.innerText = "auswählen";
-    button.addEventListener("click", auswahlEndergebnis);
-    div.appendChild(button);
-    if ((document.querySelector("title").getAttribute("id") == "ErsteWahl")) {
-        button.addEventListener("click", auswahlWaffel); //Entschiedung, wann welche Funktion bzw. Seite aufgerufen wird
-    }
-    if ((document.querySelector("title").getAttribute("id") == "ZweiteWahl")) {
-        button.addEventListener("click", auswahlKugel); //Entschiedung, wann welche Funktion bzw. Seite aufgerufen wird
-    }
-    if ((document.querySelector("title").getAttribute("id") == "DritteWahl")) {
-        button.addEventListener("click", auswahlSahne); //Entschiedung, wann welche Funktion bzw. Seite aufgerufen wird
-    }
-    return div;
-    function auswahlWaffel(_event) {
-        console.log(_auswahl.sorte); //Auskunft noch als Überprüfung dringelassen 
-        sessionStorage.setItem("image1", _auswahl.image);
-        location.href = "Kugel.html"; //direktes weiterleiten zur nächsten Seite
-    }
-    function auswahlKugel(_event) {
-        console.log(_auswahl.sorte);
-        sessionStorage.setItem("image2", _auswahl.image);
-        location.href = "Sahne.html";
-    }
-    function auswahlSahne(_event) {
-        console.log(_auswahl.sorte);
-        sessionStorage.setItem("image3", _auswahl.image);
-        location.href = "Endprodukt.html";
-    }
-    function auswahlEndergebnis(_event) {
-        console.log(_auswahl.sorte);
-        //Aufgabe1.b
-        sessionStorage.setItem("ErsteWahl", _auswahl.image);
-    }
-}
-//Aufgabe1.c 
-function auswahlZeigen(_auswahl) {
-    let anzeige = document.getElementById("Auswahl");
-    if (document.querySelector("title").getAttribute("id") == "ErsteWahl") {
-        for (let i = 0; i < _auswahl.waffeln.length; i++) {
-            let div = eisDiv(_auswahl.waffeln[i], i);
-            anzeige.appendChild(div);
-        }
-    }
-    else if (document.querySelector("title").getAttribute("id") == "ZweiteWahl") {
-        for (let i = 0; i < _auswahl.kugeln.length; i++) {
-            let div = eisDiv(_auswahl.kugeln[i], i);
-            anzeige.appendChild(div);
-        }
-    }
-    else if (document.querySelector("title").getAttribute("id") == "DritteWahl") {
-        for (let i = 0; i < _auswahl.sahnes.length; i++) {
-            let div = eisDiv(_auswahl.sahnes[i], i);
-            anzeige.appendChild(div);
-        }
-    }
-}
 //Aufgabe1.d
 let ausgewählt = document.getElementById("Ausgewählt");
-ausgewählt.classList.add("auswahlBisher");
-if (document.querySelector("title").getAttribute("id") == "ZweiteWahl") {
-    let auswahlImage = document.createElement("img");
-    auswahlImage.src = sessionStorage.getItem("image1");
-    ausgewählt.appendChild(auswahlImage);
+ausgewählt.classList.add("Ausgewählt");
+if (document.querySelector("title").getAttribute("id") == "Kugel") {
+    let auswahlKugel = document.createElement("img");
+    auswahlKugel.src = sessionStorage.getItem("Kugel");
+    ausgewählt.appendChild(auswahlKugel);
 }
-else if (document.querySelector("title").getAttribute("id") == "DritteWahl") {
-    let auswahlImage = document.createElement("img");
-    auswahlImage.src = sessionStorage.getItem("image1");
-    ausgewählt.appendChild(auswahlImage);
-    let auswahlImage2 = document.createElement("img");
-    auswahlImage2.src = sessionStorage.getItem("image2");
-    ausgewählt.appendChild(auswahlImage2);
+else if (document.querySelector("title").getAttribute("id") == "Sahne") {
+    let auswahlSahne = document.createElement("img");
+    auswahlSahne.src = sessionStorage.getItem("Sahne");
+    ausgewählt.appendChild(auswahlSahne);
+    let auswahlKugel = document.createElement("img");
+    auswahlKugel.src = sessionStorage.getItem("Kugel");
+    ausgewählt.appendChild(auswahlKugel);
 }
 //Aufgabe 2:
 else if (document.querySelector("title").getAttribute("id") == "Ergebnis") {
-    let auswahlImage = document.createElement("img");
-    auswahlImage.src = sessionStorage.getItem("image1");
-    ausgewählt.appendChild(auswahlImage);
-    let auswahlImage2 = document.createElement("img");
-    auswahlImage2.src = sessionStorage.getItem("image2");
-    ausgewählt.appendChild(auswahlImage2);
-    let auswahlImage3 = document.createElement("img");
-    auswahlImage3.src = sessionStorage.getItem("image3");
-    ausgewählt.appendChild(auswahlImage3);
+    let auswahlWaffel = document.createElement("img");
+    auswahlWaffel.src = sessionStorage.getItem("Waffel");
+    ausgewählt.appendChild(auswahlWaffel);
+    let auswahlKugel = document.createElement("img");
+    auswahlKugel.src = sessionStorage.getItem("Kugel");
+    ausgewählt.appendChild(auswahlKugel);
+    let auswahlSahne = document.createElement("img");
+    auswahlSahne.src = sessionStorage.getItem("Sahne");
+    ausgewählt.appendChild(auswahlSahne);
 }
 //# sourceMappingURL=script.js.map
