@@ -1,5 +1,5 @@
 //Bei mir werden die Bilder nicht angezeigt und ich weiß nicht, ob es an meinem JSON-String liegt, oder bei den Funktionen, die sie anzeigen sollen :( Oder ob ich einfach nur den Pfad zu meinen Bildern falsch getippt hab
-import { auswahlJSON } from "./data"; 
+namespace Eis {
 
 export interface Eisergebnis {
         sorte: string;
@@ -129,4 +129,4 @@ else if (document.querySelector ("title"). getAttribute("id") == "Ergebnis") {
     auswahlSahne.src = sessionStorage.getItem("Sahne");
     ausgewählt.appendChild(auswahlSahne);
 }
-
+}

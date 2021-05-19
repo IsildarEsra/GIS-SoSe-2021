@@ -1,4 +1,5 @@
 //Aufgabe1.a
+namespace Eis {
 export let auswahlJSON: string = 
 `
 {
@@ -42,4 +43,4 @@ export let auswahlJSON: string =
     ]
     `
 ;
-
+}

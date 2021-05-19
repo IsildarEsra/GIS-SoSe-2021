@@ -1,8 +1,8 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.auswahlJSON = void 0;
 //Aufgabe1.a
-exports.auswahlJSON = `
+var Eis;
+(function (Eis) {
+    Eis.auswahlJSON = `
 {
     "waffeln": [
         {
@@ -43,4 +43,5 @@ exports.auswahlJSON = `
         }
     ]
     `;
+})(Eis || (Eis = {}));
 //# sourceMappingURL=data.js.map
