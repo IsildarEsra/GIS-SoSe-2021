@@ -7,39 +7,39 @@ var Eis;
     "waffeln": [
         {
             "sorte": "Vanille",
-            "image": "./Bilder/Waffel/waffelVanille.png"
+            "image": "Bilder/Waffel/waffelVanille.png"
         },
         {
             "sorte": "Schoko",
-            "image": "./Bilder/Waffel/waffelSchoko.png"
+            "image": "Bilder/Waffel/waffelSchoko.png"
         },
         {
             "sorte": "Erdbeere",
-            "image": "./Bilder/Waffel/waffelErdbeere.png"
+            "image": "Bilder/Waffel/waffelErdbeere.png"
         }
     ],
     "kugeln": [
         {
             "sorte": "Schoko",
-            "image": "./Bilder/Kugel/EiskugelSchoko.png"
+            "image": "Bilder/Kugel/EiskugelSchoko.png"
         },
         {
             "sorte": "Erdbeere",
-            "image": "./Bilder/Kugel/EiskugelErdbeere.png"
+            "image": "Bilder/Kugel/EiskugelErdbeere.png"
         },
         {
             "sorte": "Vanille",
-            "image": "./Bilder/Kugel/EiskugelVanille.png"
+            "image": "Bilder/Kugel/EiskugelVanille.png"
         }
     ],
     "sahnes": [
         {
             "sorte": "Schoko",
-            "image": "./Bilder/Sahne/Sahneschoko.png"
+            "image": "Bilder/Sahne/Sahneschoko.png"
         },
         {
             "sorte": "Vanille",
-            "image": "./Bilder/Sahne/Sahneweiß.png" 
+            "image": "Bilder/Sahne/Sahneweiß.png" 
         }
     ]
     `;
