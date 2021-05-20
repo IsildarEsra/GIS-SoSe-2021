@@ -1,4 +1,3 @@
-//Bei mir werden die Bilder nicht angezeigt und ich weiß nicht, ob es an meinem JSON-String liegt, oder bei den Funktionen, die sie anzeigen sollen :( Oder ob ich einfach nur den Pfad zu meinen Bildern falsch getippt hab
 namespace Aufgabe25 {
 
 export interface Eisergebnis {
@@ -50,7 +49,6 @@ function divEis (_auswahl: Eisergebnis, _index: number): HTMLDivElement {
     }
     
     return div;
-//Daten in SessionStorage speichern
     function auswahlWaffel(_event: Event): void {
         console.log(_auswahl.sorte); 
         sessionStorage.setItem("Waffelbild", _auswahl.image); 
@@ -68,7 +66,6 @@ function divEis (_auswahl: Eisergebnis, _index: number): HTMLDivElement {
     } 
 }
         
-//Aufgabe1.c 
 function auswahlZeigen (_auswahl: AlleAuswahl): void {
     let anzeige: HTMLDivElement = <HTMLDivElement> document.getElementById("Auswahl");
     
@@ -91,8 +88,7 @@ function auswahlZeigen (_auswahl: AlleAuswahl): void {
         }
     }
 }
-//Aufgabe1.a
-//Ich weiß nicht was hier falsch ist aber wenn ich die import { auswahlJSON } from "./data"; Zeile nicht drinnen habe wird mir das immer rot unterstrichen
+
 let eis: AlleAuswahl = konvertieren();
         
 function konvertieren (): AlleAuswahl {
@@ -101,7 +97,7 @@ function konvertieren (): AlleAuswahl {
 }
 auswahlZeigen(eis);    
 
-//Aufgabe1.d
+
 let ausgewählt: HTMLDivElement = <HTMLDivElement> document.getElementById ("Ausgewählt");
 ausgewählt.classList.add("AuswahlBisher");
        
@@ -118,7 +114,7 @@ else if (document.querySelector ("title"). getAttribute("id") == "Sahne") {
     auswahlImage2.src = sessionStorage.getItem("Kugelbild");
     ausgewählt.appendChild(auswahlImage2);
 }
-//Aufgabe 2:
+
 else if (document.querySelector ("title"). getAttribute("id") == "Ergebnis") { 
     let auswahlImage: HTMLImageElement = document.createElement ("img");
     auswahlImage.src = sessionStorage.getItem("Waffelbild");
