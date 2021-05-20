@@ -42,6 +42,7 @@ var Eis;
             "image": "Bilder/Sahne/Sahneweiß.png" 
         }
     ]
-    `;
+}
+`;
 })(Eis || (Eis = {}));
 //# sourceMappingURL=data.js.map

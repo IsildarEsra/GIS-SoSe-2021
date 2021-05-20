@@ -2,31 +2,32 @@
 namespace Eis {
 
 export interface Eisergebnis {
-        sorte: string;
-        image: string;
-    }
+    sorte: string;
+    image: string;
+}
 
 export interface Waffel extends Eisergebnis {}
 export interface Kugel extends Eisergebnis {}
 export interface Sahne extends Eisergebnis {}
+
 export interface AlleAuswahl {
-        waffeln: Waffel[];
-        kugeln: Kugel[];
-        sahnes: Sahne[];
-    }
+    waffeln: Waffel[];
+    kugeln: Kugel[];
+    sahnes: Sahne[];
+}
 export interface Auswahl {
-        waffel: Waffel;
-        kugel: Kugel;
-        sahne: Sahne;
-    }
+    waffel: Waffel;
+    kugel: Kugel;
+    sahne: Sahne;
+}
 
 function divEis (_auswahl: Eisergebnis, _index: number): HTMLDivElement {
     let div: HTMLDivElement = document.createElement("div");
     div.classList.add ("Eisergebnis"); 
     
-    let img: HTMLImageElement = document.createElement("img");
-    img.src = _auswahl.image;
-    div.appendChild(img);
+    let image: HTMLImageElement = document.createElement("img");
+    image.src = _auswahl.image;
+    div.appendChild(image);
     
     let span: HTMLSpanElement = document.createElement("span");
     span.innerText = _auswahl.sorte;
@@ -52,17 +53,17 @@ function divEis (_auswahl: Eisergebnis, _index: number): HTMLDivElement {
 //Daten in SessionStorage speichern
     function auswahlWaffel(_event: Event): void {
         console.log(_auswahl.sorte); 
-        sessionStorage.setItem("Waffel", _auswahl.image); 
+        sessionStorage.setItem("Waffelbild", _auswahl.image); 
         location.href = "Kugel.html"; 
     }
     function auswahlKugel(_event: Event): void {
         console.log(_auswahl.sorte);
-        sessionStorage.setItem("Kugel", _auswahl.image);
+        sessionStorage.setItem("Kugelbild", _auswahl.image);
         location.href = "Sahne.html";
     }
     function auswahlSahne(_event: Event): void {
         console.log(_auswahl.sorte); 
-        sessionStorage.setItem("Sahne", _auswahl.image);  
+        sessionStorage.setItem("Sahnebild", _auswahl.image);  
         location.href = "Endprodukt.html";
     } 
 }
@@ -102,31 +103,31 @@ auswahlZeigen(eis);
 
 //Aufgabe1.d
 let ausgewählt: HTMLDivElement = <HTMLDivElement> document.getElementById ("Ausgewählt");
-ausgewählt.classList.add("Ausgewählt");
+ausgewählt.classList.add("Auswahl");
        
 if (document.querySelector ("title").getAttribute("id") == "Kugel") {
-    let auswahlKugel: HTMLImageElement = document.createElement ("img");
-    auswahlKugel.src = sessionStorage.getItem("Kugel");
-    ausgewählt.appendChild(auswahlKugel);
+    let auswahlImage: HTMLImageElement = document.createElement ("img");
+    auswahlImage.src = sessionStorage.getItem("Waffelbild");
+    ausgewählt.appendChild(auswahlImage);
 }
 else if (document.querySelector ("title"). getAttribute("id") == "Sahne") { 
-    let auswahlSahne: HTMLImageElement = document.createElement ("img");
-    auswahlSahne.src = sessionStorage.getItem("Sahne");
-    ausgewählt.appendChild(auswahlSahne);
-    let auswahlKugel: HTMLImageElement = document.createElement("img");
-    auswahlKugel.src = sessionStorage.getItem("Kugel");
-    ausgewählt.appendChild(auswahlKugel);
+    let auswahlImage: HTMLImageElement = document.createElement ("img");
+    auswahlImage.src = sessionStorage.getItem("Waffelbild");
+    ausgewählt.appendChild(auswahlImage);
+    let auswahlImage2: HTMLImageElement = document.createElement("img");
+    auswahlImage2.src = sessionStorage.getItem("Kugelbild");
+    ausgewählt.appendChild(auswahlImage2);
 }
 //Aufgabe 2:
 else if (document.querySelector ("title"). getAttribute("id") == "Ergebnis") { 
-    let auswahlWaffel: HTMLImageElement = document.createElement ("img");
-    auswahlWaffel.src = sessionStorage.getItem("Waffel");
-    ausgewählt.appendChild(auswahlWaffel);
-    let auswahlKugel: HTMLImageElement = document.createElement("img");
-    auswahlKugel.src = sessionStorage.getItem("Kugel");
-    ausgewählt.appendChild(auswahlKugel);
-    let auswahlSahne: HTMLImageElement = document.createElement("img");
-    auswahlSahne.src = sessionStorage.getItem("Sahne");
-    ausgewählt.appendChild(auswahlSahne);
+    let auswahlImage: HTMLImageElement = document.createElement ("img");
+    auswahlImage.src = sessionStorage.getItem("Waffelbild");
+    ausgewählt.appendChild(auswahlImage);
+    let auswahlImage2: HTMLImageElement = document.createElement("img");
+    auswahlImage2.src = sessionStorage.getItem("Kugelbild");
+    ausgewählt.appendChild(auswahlImage2);
+    let auswahlImage3: HTMLImageElement = document.createElement("img");
+    auswahlImage3.src = sessionStorage.getItem("Sahnebild");
+    ausgewählt.appendChild(auswahlImage3);
 }
 }

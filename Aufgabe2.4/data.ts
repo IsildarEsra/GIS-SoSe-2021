@@ -41,6 +41,6 @@ export let auswahlJSON: string =
             "image": "Bilder/Sahne/Sahneweiß.png" 
         }
     ]
-    `
-;
+}
+`;
 }

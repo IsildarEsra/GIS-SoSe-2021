@@ -5,9 +5,9 @@ var Eis;
     function divEis(_auswahl, _index) {
         let div = document.createElement("div");
         div.classList.add("Eisergebnis");
-        let img = document.createElement("img");
-        img.src = _auswahl.image;
-        div.appendChild(img);
+        let image = document.createElement("img");
+        image.src = _auswahl.image;
+        div.appendChild(image);
         let span = document.createElement("span");
         span.innerText = _auswahl.sorte;
         div.appendChild(span);
@@ -27,17 +27,17 @@ var Eis;
         //Daten in SessionStorage speichern
         function auswahlWaffel(_event) {
             console.log(_auswahl.sorte);
-            sessionStorage.setItem("Waffel", _auswahl.image);
+            sessionStorage.setItem("Waffelbild", _auswahl.image);
             location.href = "Kugel.html";
         }
         function auswahlKugel(_event) {
             console.log(_auswahl.sorte);
-            sessionStorage.setItem("Kugel", _auswahl.image);
+            sessionStorage.setItem("Kugelbild", _auswahl.image);
             location.href = "Sahne.html";
         }
         function auswahlSahne(_event) {
             console.log(_auswahl.sorte);
-            sessionStorage.setItem("Sahne", _auswahl.image);
+            sessionStorage.setItem("Sahnebild", _auswahl.image);
             location.href = "Endprodukt.html";
         }
     }
@@ -73,31 +73,31 @@ var Eis;
     auswahlZeigen(eis);
     //Aufgabe1.d
     let ausgewählt = document.getElementById("Ausgewählt");
-    ausgewählt.classList.add("Ausgewählt");
+    ausgewählt.classList.add("Auswahl");
     if (document.querySelector("title").getAttribute("id") == "Kugel") {
-        let auswahlKugel = document.createElement("img");
-        auswahlKugel.src = sessionStorage.getItem("Kugel");
-        ausgewählt.appendChild(auswahlKugel);
+        let auswahlImage = document.createElement("img");
+        auswahlImage.src = sessionStorage.getItem("Waffelbild");
+        ausgewählt.appendChild(auswahlImage);
     }
     else if (document.querySelector("title").getAttribute("id") == "Sahne") {
-        let auswahlSahne = document.createElement("img");
-        auswahlSahne.src = sessionStorage.getItem("Sahne");
-        ausgewählt.appendChild(auswahlSahne);
-        let auswahlKugel = document.createElement("img");
-        auswahlKugel.src = sessionStorage.getItem("Kugel");
-        ausgewählt.appendChild(auswahlKugel);
+        let auswahlImage = document.createElement("img");
+        auswahlImage.src = sessionStorage.getItem("Waffelbild");
+        ausgewählt.appendChild(auswahlImage);
+        let auswahlImage2 = document.createElement("img");
+        auswahlImage2.src = sessionStorage.getItem("Kugelbild");
+        ausgewählt.appendChild(auswahlImage2);
     }
     //Aufgabe 2:
     else if (document.querySelector("title").getAttribute("id") == "Ergebnis") {
-        let auswahlWaffel = document.createElement("img");
-        auswahlWaffel.src = sessionStorage.getItem("Waffel");
-        ausgewählt.appendChild(auswahlWaffel);
-        let auswahlKugel = document.createElement("img");
-        auswahlKugel.src = sessionStorage.getItem("Kugel");
-        ausgewählt.appendChild(auswahlKugel);
-        let auswahlSahne = document.createElement("img");
-        auswahlSahne.src = sessionStorage.getItem("Sahne");
-        ausgewählt.appendChild(auswahlSahne);
+        let auswahlImage = document.createElement("img");
+        auswahlImage.src = sessionStorage.getItem("Waffelbild");
+        ausgewählt.appendChild(auswahlImage);
+        let auswahlImage2 = document.createElement("img");
+        auswahlImage2.src = sessionStorage.getItem("Kugelbild");
+        ausgewählt.appendChild(auswahlImage2);
+        let auswahlImage3 = document.createElement("img");
+        auswahlImage3.src = sessionStorage.getItem("Sahnebild");
+        ausgewählt.appendChild(auswahlImage3);
     }
 })(Eis || (Eis = {}));
 //# sourceMappingURL=script.js.map
