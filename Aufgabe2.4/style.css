@@ -19,26 +19,6 @@ h2{
     text-align: center;
 }
 
-#Option1{
-    color: skyblue;
-    background-color:black;
-    margin: 10px 20px 10px 10px;
-    text-align: center;
-}
-
-#Option2{
-    color: skyblue;
-    background-color:black;
-    margin: 10px 20px 10px 10px;
-    text-align: center;
-}
-
-#Option3{
-    color: skyblue;
-    background-color:black;
-    margin: 10px 10px 10px 10px;
-    text-align: center;
-}
 
 button:hover{
     padding: 5px 5px 5px 5px;
