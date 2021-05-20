@@ -103,7 +103,7 @@ auswahlZeigen(eis);
 
 //Aufgabe1.d
 let ausgewählt: HTMLDivElement = <HTMLDivElement> document.getElementById ("Ausgewählt");
-ausgewählt.classList.add("Auswahl");
+ausgewählt.classList.add("AuswahlBisher");
        
 if (document.querySelector ("title").getAttribute("id") == "Kugel") {
     let auswahlImage: HTMLImageElement = document.createElement ("img");

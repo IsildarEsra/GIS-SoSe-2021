@@ -73,7 +73,7 @@ var Eis;
     auswahlZeigen(eis);
     //Aufgabe1.d
     let ausgewählt = document.getElementById("Ausgewählt");
-    ausgewählt.classList.add("Auswahl");
+    ausgewählt.classList.add("AuswahlBisher");
     if (document.querySelector("title").getAttribute("id") == "Kugel") {
         let auswahlImage = document.createElement("img");
         auswahlImage.src = sessionStorage.getItem("Waffelbild");
