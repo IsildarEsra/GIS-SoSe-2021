@@ -1,7 +1,8 @@
+"use strict";
 //Aufgabe1.a
-namespace Eis {
-export let auswahlJSON: string = 
-`
+var Aufgabe25;
+(function (Aufgabe25) {
+    Aufgabe25.teileJSON = `
 {
     "waffeln": [
         {
@@ -42,6 +43,6 @@ export let auswahlJSON: string =
         }
     ]
 }
-`
-;
-}
+`;
+})(Aufgabe25 || (Aufgabe25 = {}));
+//# sourceMappingURL=data.js.map

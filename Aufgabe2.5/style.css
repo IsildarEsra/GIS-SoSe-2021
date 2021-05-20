@@ -1,0 +1,57 @@
+body {
+    background-color: royalblue;
+    text-align: center;
+    position: relative;
+}
+h1 {
+    transition: color 2s ease-in-out 0s;
+    color:white;
+    text-shadow: grey;
+    text-align: center;
+}
+
+h1:hover{
+    color:black;
+}
+
+h2{
+    color:white;
+    text-align: center;
+}
+
+
+button:hover{
+    padding: 5px 5px 5px 5px;
+}
+
+thead{
+    width: 800px;
+    background-color: skyblue;
+    color: white;
+  }
+  
+  tbody{
+    background-color: skyblue;
+  }
+  
+  table * {
+    border-collapse: collapse;
+    border: 5px solid black;
+    letter-spacing: 1px;
+    font-size: 25px;
+    
+    
+  }
+  
+  td, th{
+    border: 1px solid black;
+    padding: 5px 10px;
+  }
+  
+  td{
+    text-align: center;
+  }
+
+  img{
+    width: 200px;
+  }

@@ -1,6 +1,6 @@
 //Aufgabe1.a
-namespace Eis {
-export let auswahlJSON: string = 
+namespace Aufgabe25 {
+export let teileJSON: string = 
 `
 {
     "waffeln": [
@@ -42,6 +42,5 @@ export let auswahlJSON: string =
         }
     ]
 }
-`
-;
+`;
 }
