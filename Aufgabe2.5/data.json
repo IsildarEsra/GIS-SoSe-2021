@@ -1,7 +1,3 @@
-//Aufgabe1.a
-namespace Aufgabe25 {
-export let teileJSON: string = 
-`
 {
     "waffeln": [
         {
@@ -41,6 +37,4 @@ export let teileJSON: string =
             "image": "Bilder/Sahne/Sahneweiß.png" 
         }
     ]
-}
-`;
 }

@@ -89,13 +89,13 @@ function auswahlZeigen (_auswahl: AlleAuswahl): void {
     }
 }
 
-let eis: AlleAuswahl = konvertieren();
-        
-function konvertieren (): AlleAuswahl {
-    let auswahl: AlleAuswahl = JSON.parse(teileJSON);
-    return (auswahl);
+async function einlesen(_url: RequestInfo): Promise<void> {
+    let reaktion: Response = await fetch(_url); 
+    console.log(reaktion);
+    let daten: AlleAuswahl = await reaktion.json();
+    auswahlZeigen(daten);
 }
-auswahlZeigen(eis);    
+einlesen("https://isildaresra.github.io/GIS-SoSe-2021/Aufgabe2.5/data.json");   
 
 
 let ausgewählt: HTMLDivElement = <HTMLDivElement> document.getElementById ("Ausgewählt");
