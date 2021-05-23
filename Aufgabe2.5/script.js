@@ -1,5 +1,4 @@
 "use strict";
-//Bei mir werden die Bilder nicht angezeigt und ich weiß nicht, ob es an meinem JSON-String liegt, oder bei den Funktionen, die sie anzeigen sollen :( Oder ob ich einfach nur den Pfad zu meinen Bildern falsch getippt hab
 var Aufgabe25;
 (function (Aufgabe25) {
     function divEis(_auswahl, _index) {
@@ -24,7 +23,6 @@ var Aufgabe25;
             button.addEventListener("click", auswahlSahne);
         }
         return div;
-        //Daten in SessionStorage speichern
         function auswahlWaffel(_event) {
             console.log(_auswahl.sorte);
             sessionStorage.setItem("Waffelbild", _auswahl.image);
@@ -41,7 +39,6 @@ var Aufgabe25;
             location.href = "Endprodukt.html";
         }
     }
-    //Aufgabe1.c 
     function auswahlZeigen(_auswahl) {
         let anzeige = document.getElementById("Auswahl");
         if (document.querySelector("title").getAttribute("id") == "Waffel") {
@@ -63,15 +60,14 @@ var Aufgabe25;
             }
         }
     }
-    //Aufgabe1.a
-    //Ich weiß nicht was hier falsch ist aber wenn ich die import { auswahlJSON } from "./data"; Zeile nicht drinnen habe wird mir das immer rot unterstrichen
-    let eis = konvertieren();
-    function konvertieren() {
-        let auswahl = JSON.parse(Aufgabe25.teileJSON);
-        return (auswahl);
+    //b
+    async function einlesen(_url) {
+        let reaktion = await fetch(_url);
+        console.log(reaktion);
+        let daten = await reaktion.json();
+        auswahlZeigen(daten);
     }
-    auswahlZeigen(eis);
-    //Aufgabe1.d
+    einlesen("https://isildaresra.github.io/GIS-SoSe-2021/Aufgabe2.5/data.json");
     let ausgewählt = document.getElementById("Ausgewählt");
     ausgewählt.classList.add("AuswahlBisher");
     if (document.querySelector("title").getAttribute("id") == "Kugel") {
@@ -87,7 +83,6 @@ var Aufgabe25;
         auswahlImage2.src = sessionStorage.getItem("Kugelbild");
         ausgewählt.appendChild(auswahlImage2);
     }
-    //Aufgabe 2:
     else if (document.querySelector("title").getAttribute("id") == "Ergebnis") {
         let auswahlImage = document.createElement("img");
         auswahlImage.src = sessionStorage.getItem("Waffelbild");

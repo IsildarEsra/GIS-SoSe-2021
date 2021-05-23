@@ -88,7 +88,7 @@ function auswahlZeigen (_auswahl: AlleAuswahl): void {
         }
     }
 }
-
+//b
 async function einlesen(_url: RequestInfo): Promise<void> {
     let reaktion: Response = await fetch(_url); 
     console.log(reaktion);
