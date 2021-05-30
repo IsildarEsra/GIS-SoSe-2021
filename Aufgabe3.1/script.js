@@ -11,7 +11,7 @@ var Aufgabe3_1;
         }
         let query = new URLSearchParams(formData);
         let _url = "https://gissose2021mr.herokuapp.com/";
-        _url = _url + "?" + query.toString();
+        _url = _url + query.toString();
         console.log(_url);
         let response = await fetch(_url);
         let antwort = await response.text();

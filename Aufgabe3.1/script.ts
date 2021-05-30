@@ -9,7 +9,7 @@ namespace Aufgabe3_1 {
         }
         let  query: URLSearchParams = new URLSearchParams(<any> formData);
         let _url: RequestInfo = "https://gissose2021mr.herokuapp.com/";
-        _url = _url + "?" + query.toString();
+        _url = _url + query.toString();
         console.log(_url);
         let response: Response = await fetch (_url);
         let antwort: string = await response.text();
