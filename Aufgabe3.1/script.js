@@ -10,7 +10,7 @@ var Aufgabe3_1;
             console.log(entry[1]);
         }
         let query = new URLSearchParams(formData); //Was kann ich statt 'any' benutzen in diesem Fall?
-        let _url = "https://gissose2021esra.herokuapp.com/";
+        let _url = "https://gissose2021esra.herokuapp.com/"; //Ich werde Hilfe hier brauchen es hat bei mir nicht so geklappt wie in der Anleitung :(
         _url = _url + query.toString();
         console.log(_url);
         let response = await fetch(_url);

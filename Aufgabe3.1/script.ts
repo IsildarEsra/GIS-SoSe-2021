@@ -8,7 +8,7 @@ namespace Aufgabe3_1 {
             console.log(entry[1]);
         }
         let  query: URLSearchParams = new URLSearchParams(<any> formData); //Was kann ich statt 'any' benutzen in diesem Fall?
-        let _url: RequestInfo = "https://gissose2021esra.herokuapp.com/";
+        let _url: RequestInfo = "https://gissose2021esra.herokuapp.com/"; //Ich werde Hilfe hier brauchen es hat bei mir nicht so geklappt wie in der Anleitung :(
         _url = _url + query.toString();
         console.log(_url);
         let response: Response = await fetch (_url);
