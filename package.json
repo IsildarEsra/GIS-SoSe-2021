@@ -1,0 +1,21 @@
+{
+  "name": "gis-sose-2021",
+  "version": "1.0.0",
+  "description": "gis",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgabe3.1/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsildarEsra/GIS-SoSe-2021.git"
+  },
+  "author": "Esra Isildar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsildarEsra/GIS-SoSe-2021/issues"
+  },
+  "homepage": "https://github.com/IsildarEsra/GIS-SoSe-2021#readme"
+}
