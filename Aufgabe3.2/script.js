@@ -5,7 +5,7 @@ var Aufgabe3_2;
     jsonButton.addEventListener("click", sendJSON);
     let htmlButton = document.getElementById("HTML");
     htmlButton.addEventListener("click", sendHTML);
-    let ausgabe = document.getElementById("serverausgabe");
+    let ausgabe = document.getElementById("ausgabe");
     async function sendHTML() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2021esra.herokuapp.com";

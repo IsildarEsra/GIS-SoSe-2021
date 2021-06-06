@@ -4,7 +4,7 @@ namespace Aufgabe3_2 {
     let htmlButton: HTMLButtonElement = <HTMLButtonElement> document.getElementById("HTML"); 
     htmlButton.addEventListener("click", sendHTML);
 
-    let ausgabe: HTMLParagraphElement = <HTMLParagraphElement> document.getElementById("serverausgabe");
+    let ausgabe: HTMLParagraphElement = <HTMLParagraphElement> document.getElementById("ausgabe");
     
     async function sendHTML(): Promise<void> {
         let formData: FormData = new FormData (document.forms[0]);
