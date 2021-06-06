@@ -26,7 +26,6 @@ namespace Aufgabe3_2 {
         let objektJson: Antwort = await response.json();
         console.log(objektJson);
        
-
         rueckgabe.innerHTML = objektJson.name;
         console.log(rueckgabe);
     }
