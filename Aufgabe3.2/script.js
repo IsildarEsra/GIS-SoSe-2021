@@ -5,16 +5,16 @@ var Aufgabe3_2;
     jsonButton.addEventListener("click", sendJSON);
     let htmlButton = document.getElementById("HTML");
     htmlButton.addEventListener("click", sendHTML);
-    let ausgabe = document.getElementById("ausgabe");
+    let rueckgabe = document.getElementById("ausgabe");
     async function sendHTML() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2021esra.herokuapp.com";
         url += "/html";
         let query = new URLSearchParams(formData);
         url = url + query.toString();
-        let antwort = await fetch(url);
-        let response = await antwort.text();
-        ausgabe.innerHTML = response;
+        let response = await fetch(url);
+        let antwort = await response.text();
+        rueckgabe.innerHTML = antwort;
     }
     async function sendJSON() {
         let formData = new FormData(document.forms[0]);
@@ -22,11 +22,11 @@ var Aufgabe3_2;
         url += "/json";
         let query = new URLSearchParams(formData);
         url = url + query.toString();
-        let antwort = await fetch(url);
-        let objektJson = await antwort.json();
+        let response = await fetch(url);
+        let objektJson = await response.json();
         console.log(objektJson);
-        ausgabe.innerHTML = objektJson.name;
-        console.log(ausgabe);
+        rueckgabe.innerHTML = objektJson.name;
+        console.log(rueckgabe);
     }
 })(Aufgabe3_2 || (Aufgabe3_2 = {}));
 //# sourceMappingURL=script.js.map
