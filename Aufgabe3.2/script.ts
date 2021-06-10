@@ -11,7 +11,7 @@ namespace Aufgabe3_2 {
         let url: RequestInfo = "https://gissose2021esra.herokuapp.com"; 
         url += "/html";
         let  query: URLSearchParams = new URLSearchParams(<any> formData);
-        url = url + query.toString();
+        url = url + "?" + query.toString();
         let response: Response = await fetch (url);
         let antwort: string = await response.text(); 
         rueckgabe.innerHTML = antwort;
@@ -21,16 +21,16 @@ namespace Aufgabe3_2 {
         let url: RequestInfo = "https://gissose2021esra.herokuapp.com";
         url += "/json"; 
         let  query: URLSearchParams = new URLSearchParams(<any> formData);
-        url = url + query.toString();
+        url = url + "?" + query.toString();
         let response: Response = await fetch (url);
-        let objektJson: Antwort = await response.json();
+        let objektJson: Serverantwort = await response.json();
         console.log(objektJson);
        
         rueckgabe.innerHTML = objektJson.name;
         console.log(rueckgabe);
     }
 
-    interface Antwort {
+    interface Serverantwort {
         name: string; 
         adresse: string;
     }

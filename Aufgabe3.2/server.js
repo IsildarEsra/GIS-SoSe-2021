@@ -17,6 +17,7 @@ var Aufgabe3_2;
         console.log("Listening");
     }
     function handleRequest(_request, _response) {
+        console.log("I hear voices!");
         console.log(_request.url);
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
@@ -30,7 +31,7 @@ var Aufgabe3_2;
             }
             else if (path == "/html") {
                 for (let key in url.query) {
-                    _response.write(key + url.query[key]);
+                    _response.write(key + ":" + url.query[key] + "<br/>");
                 }
             }
         }

@@ -18,7 +18,9 @@ export namespace Aufgabe3_2 {
 
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+        console.log("I hear voices!");
         console.log(_request.url);
+        
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -32,7 +34,7 @@ export namespace Aufgabe3_2 {
               }
               else if (path == "/html") {
                   for (let key in url.query) {
-                      _response.write (key + url.query [key]);           
+                      _response.write (key + ":" + url.query [key] + "<br/>");           
                   }
                 }
         }
