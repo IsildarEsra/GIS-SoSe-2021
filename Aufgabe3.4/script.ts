@@ -31,7 +31,7 @@ async function handleRequest(_request: Http.IncomingMessage, _response: Http.Ser
     if (_request.url) {
         let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
         let pathname: string = <string>url.pathname;
-        let eingabe: Eingabe = {vorname: url.query.vorname + "", nachname: url.query.nachname + "", feedback: url.query.feedback + ""};
+        let eingabe: Eingabe = {vorname: url.query.vorname + "", nachname: url.query.nachname + "", matrikel: url.query.matrikel + ""};
 
         if (pathname == "/Versenden") { 
         let daten: string = await abspeichern (urlDB, eingabe);
@@ -74,7 +74,7 @@ async function dbAuslesen(_url: string): Promise <Eingabe[]> {
 interface Eingabe {
     vorname: string;
     nachname: string;
-    feedback: string;
+    matrikel: string;
 }
 
 }
