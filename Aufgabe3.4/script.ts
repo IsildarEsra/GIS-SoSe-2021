@@ -12,8 +12,6 @@ if (!port)
 
 startServer(port); 
 
-
-
 function startServer (_port: number | string): void {
     let server: Http.Server = Http. createServer();
     console.log("Gestartet");
@@ -21,7 +19,6 @@ function startServer (_port: number | string): void {
     server.addListener("request", handleRequest);
 
 }
-
 
 async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise <void> { 
     console.log("Angekommen");
@@ -31,7 +28,7 @@ async function handleRequest(_request: Http.IncomingMessage, _response: Http.Ser
     if (_request.url) {
         let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
         let pathname: string = <string>url.pathname;
-        let eingabe: Eingabe = {vorname: url.query.vorname + "", nachname: url.query.nachname + "", matrikel: url.query.matrikel + ""};
+        let eingabe: Daten = {vorname: url.query.vorname + "", nachname: url.query.nachname + "", matrikel: url.query.matrikel + ""};
 
         if (pathname == "/Versenden") { 
         let daten: string = await abspeichern (urlDB, eingabe);
@@ -39,7 +36,7 @@ async function handleRequest(_request: Http.IncomingMessage, _response: Http.Ser
     }
 
         else if (pathname == "/Serveranfrage") { 
-            let antwort: Eingabe[] = await dbAuslesen(urlDB);
+            let antwort: Daten[] = await dbAuslesen(urlDB);
             console.log(antwort);
             _response.write(JSON.stringify(antwort));
         }     
@@ -47,7 +44,7 @@ async function handleRequest(_request: Http.IncomingMessage, _response: Http.Ser
     _response.end();
 }
     
-async function abspeichern(_url: string, _eingabe: Eingabe): Promise <string> {
+async function abspeichern(_url: string, _eingabe: Daten): Promise <string> {
     let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
     let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
     await mongoClient.connect();
@@ -58,20 +55,18 @@ async function abspeichern(_url: string, _eingabe: Eingabe): Promise <string> {
     return antwort;
 }
 
-async function dbAuslesen(_url: string): Promise <Eingabe[]> {
+async function dbAuslesen(_url: string): Promise <Daten[]> {
     let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
     let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
     await mongoClient.connect();
 
     let infos: Mongo.Collection = mongoClient.db("Test").collection("Students");
     let cursor: Mongo.Cursor = infos.find ();
-    let result: Eingabe[] = await cursor.toArray();
+    let result: Daten[] = await cursor.toArray();
     return result;
-
 }
 
-
-interface Eingabe {
+interface Daten {
     vorname: string;
     nachname: string;
     matrikel: string;
