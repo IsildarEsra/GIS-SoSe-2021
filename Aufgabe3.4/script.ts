@@ -48,7 +48,6 @@ async function abspeichern(_url: string, _eingabe: Daten): Promise <string> {
     let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
     let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
     await mongoClient.connect();
-
     let infos: Mongo.Collection = mongoClient.db("Test").collection("Students");
     infos.insertOne (_eingabe);
     let antwort: string = "Gespeichert";
@@ -59,7 +58,6 @@ async function dbAuslesen(_url: string): Promise <Daten[]> {
     let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
     let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
     await mongoClient.connect();
-
     let infos: Mongo.Collection = mongoClient.db("Test").collection("Students");
     let cursor: Mongo.Cursor = infos.find ();
     let result: Daten[] = await cursor.toArray();

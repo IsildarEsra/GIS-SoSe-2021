@@ -10,7 +10,6 @@ namespace Aufgabe3_4 {
         let formData: FormData = new FormData (document.forms[0]);
         let url: RequestInfo = "https://gissose2021esra.herokuapp.com";
         url += "/Versenden";
-     
         let  query: URLSearchParams = new URLSearchParams(<any> formData);
         url = url + "?" + query.toString(); 
         let antwort: Response = await fetch (url);
