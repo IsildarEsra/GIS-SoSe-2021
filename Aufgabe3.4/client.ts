@@ -16,7 +16,6 @@ namespace Aufgabe3_4 {
         let ausgabe: string = await antwort.text();
         console.log(ausgabe);    
     }
-
     async function serveranfrage(): Promise <void> { 
         let formData: FormData = new FormData (document.forms[0]);
         let url: RequestInfo = "https://gissose2021esra.herokuapp.com";
