@@ -6,7 +6,7 @@ const Url = require("url");
 const Mongo = require("mongodb");
 var Aufgabe3_4;
 (function (Aufgabe3_4) {
-    let urlDB = "mongodb+srv://dbUser:<password>@isildaresra.6xflr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    let urlDB = "mongodb+srv://dbUser:<hallogis>@isildaresra.6xflr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
