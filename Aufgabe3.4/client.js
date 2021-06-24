@@ -9,6 +9,7 @@ var Aufgabe3_4;
     async function versenden() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2021esra.herokuapp.com";
+        //let url: RequestInfo = "http://127.0.0.1:8100";
         url += "/Versenden";
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
@@ -19,6 +20,7 @@ var Aufgabe3_4;
     async function serveranfrage() {
         let formData = new FormData(document.forms[0]);
         let url = "https://gissose2021esra.herokuapp.com";
+        //let url: RequestInfo = "http://127.0.0.1:8100";
         url += "/Serveranfrage";
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();

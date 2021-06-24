@@ -8,7 +8,8 @@ namespace Aufgabe3_4 {
 
     async function versenden(): Promise<void> { 
         let formData: FormData = new FormData (document.forms[0]);
-        let url: RequestInfo = "https://gissose2021esra.herokuapp.com";
+        let url: RequestInfo = "https://gissose2021esra.herokuapp.com"; 
+        //let url: RequestInfo = "http://127.0.0.1:8100";
         url += "/Versenden";
         let  query: URLSearchParams = new URLSearchParams(<any> formData);
         url = url + "?" + query.toString(); 
@@ -19,6 +20,7 @@ namespace Aufgabe3_4 {
     async function serveranfrage(): Promise <void> { 
         let formData: FormData = new FormData (document.forms[0]);
         let url: RequestInfo = "https://gissose2021esra.herokuapp.com";
+        //let url: RequestInfo = "http://127.0.0.1:8100";
         url += "/Serveranfrage";
         let  query: URLSearchParams = new URLSearchParams(<any> formData);
         url = url + "?" + query.toString();
