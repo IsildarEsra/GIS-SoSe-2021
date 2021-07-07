@@ -135,7 +135,7 @@ var RezeptTool;
         //parameter aus Request auslesen
         let title = params.get("title");
         let description = params.get("description");
-        let ingredients = params.get("ingredients");
+        let ingredients = JSON.parse(params.get("ingredients"));
         let user = params.get("user");
         //parameter validieren
         if (!title || !description || !ingredients || !user) {
@@ -166,7 +166,7 @@ var RezeptTool;
         let title = params.get("title");
         let newTitle = params.get("newTitle");
         let description = params.get("description");
-        let ingredients = params.get("ingredients");
+        let ingredients = JSON.parse(params.get("ingredients"));
         if (!title || !description || !ingredients) {
             return JSON.stringify({ error: true, message: "Es wurden nicht ausreichend Parameter übertragen." });
         }
@@ -233,6 +233,7 @@ var RezeptTool;
      * @returns
      */
     async function getAllRez() {
+        //TODO: user als parameter hinzufügen und anhanddessen für jedes Rezept überprüfen, ob es schon geliked wird.
         let rezepte = await dbclient.db("rezepttool").collection("rezepte").find({}).toArray();
         return JSON.stringify(rezepte);
     }

@@ -6,31 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <script src="" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="js/config.js"></script>
+    <script src="js/login.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>Login</title>
 </head>
 
 <body>
+    <p id="status"></p>
     <div>
         <p>Hier kannst du dich registrieren</p>
-        <form>
-
-            <input type="text" name="benutzername" placeholder="Benutzername"><br><br>
-            <input type="password" name="password" placeholder="Passwort"><br><br>
-            <button type="button" id="registration">Registrieren</button>
-
+        <form id="reg-form">
+            <input type="text" name="benutzername" placeholder="Benutzername" required><br><br>
+            <input type="password" name="password" placeholder="Passwort" required><br><br>
+            <button type="submit" id="registration">Registrieren</button>
         </form>
     </div>
     
     <div>
         <p>Schon registriert? Logge dich ein</p>
-        <form>
+        <form id="login-form">
 
-            <input type="text" name="benutzername" placeholder="Benutzername"><br><br>
-            <input type="password" name="password" placeholder="Passwort"><br><br>
-            <button type="button" id="login">Login</button>
+            <input type="text" name="benutzername" placeholder="Benutzername" required><br><br>
+            <input type="password" name="password" placeholder="Passwort" required><br><br>
+            <button type="submit" id="login">Login</button>
 
         </form>
 
