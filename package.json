@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node ./Modulprüfung/script.js"
+    "start": "node Modulprüfung/server/server.js"
   },
   "repository": {
     "type": "git",
