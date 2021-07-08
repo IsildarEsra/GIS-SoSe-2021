@@ -19,8 +19,9 @@ var RezeptTool;
     const server = Http.createServer();
     //Listener an das Objekt setzen
     server.addListener("request", handleRequest);
-    //auf Port 8100 hören
-    server.listen(8100);
+    //auf Port 8100 hören oder einen Port der von heroku zugewiesen wird
+    server.listen(process.env.PORT || 8100);
+    console.log("Server listening..");
     /**
      * Allgemeiner Requesthandler (nimmt jeden Request vom Client entgegen)
      */

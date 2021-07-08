@@ -1,4 +1,4 @@
-const SERVER_URL = "http://localhost:8100";
+const SERVER_URL = "https://gissose2021esra.herokuapp.com";
 
 
 function showStatus(msg: string){
