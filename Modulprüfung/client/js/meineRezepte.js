@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         editBtn.innerText = "Editieren";
         editBtn.addEventListener("click", () => startEditRezept(rezept));
         let deleteBtn = document.createElement("BUTTON");
-        editBtn.innerText = "Löschen";
-        editBtn.addEventListener("click", () => deleteRez(rezept.title));
+        deleteBtn.innerText = "Löschen";
+        deleteBtn.addEventListener("click", () => deleteRez(rezept.title));
         title.innerText = rezept.title;
         description.innerText = rezept.description;
         user.innerText = "von: " + rezept.user;
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         container.appendChild(ingredients);
         container.appendChild(user);
         container.appendChild(editBtn);
+        container.appendChild(deleteBtn);
         allRez.appendChild(container);
         allRez.appendChild(line);
     }
