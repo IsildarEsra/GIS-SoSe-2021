@@ -18,6 +18,7 @@ interface Rezept {
     description: string;
     ingredients: string[];
     user: string;
+    liked?: boolean;
 }
 
 interface User {
@@ -79,7 +80,7 @@ export namespace RezeptTool {
         //Antwort berechnen, je nach path
         switch (url.pathname) {
             case "/showrezepte":
-                response = await getAllRez();
+                response = await getAllRez(url.searchParams);
                 break;
             case "/showlikedrezepte":
                 response = await getLikedRez( url.searchParams);
@@ -263,9 +264,21 @@ export namespace RezeptTool {
      * Alle Rezepte ausgeben
      * @returns 
      */
-    async function getAllRez(): Promise<string> {
-        //TODO: user als parameter hinzufügen und anhanddessen für jedes Rezept überprüfen, ob es schon geliked wird.
+    async function getAllRez(params: URLSearchParams): Promise<string> {
+        let user: string = params.get("user");
+        if (!user) {
+            return JSON.stringify({error: true, message: "Es wurden nicht ausreichend Parameter übertragen."});
+        }
         let rezepte: Rezept[] = await dbclient.db("rezepttool").collection("rezepte").find({}).toArray();
+        for(let rezept of rezepte){
+            let liked: Like[] = await dbclient.db("rezepttool").collection("userlikesrezept").find({userName: user, rezeptName: rezept.title}).toArray();
+            if(liked.length > 0){
+                rezept.liked = true;
+            }
+            else{
+                rezept.liked = false;
+            }
+        }
         return JSON.stringify(rezepte);
     }
 

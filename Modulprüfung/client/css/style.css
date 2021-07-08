@@ -1,3 +1,6 @@
 #status {
     color: red;
 }
+body {
+    background-image:image("blumen.png");
+}
