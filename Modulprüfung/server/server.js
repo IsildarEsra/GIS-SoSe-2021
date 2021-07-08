@@ -222,11 +222,12 @@ var RezeptTool;
      * @returns
      */
     async function deleteRez(params) {
+        let user = params.get("user");
         let rezept = params.get("rezept");
-        if (!rezept) {
+        if (!rezept || !user) {
             return JSON.stringify({ error: true, message: "Es wurden nicht ausreichend Parameter übertragen." });
         }
-        await dbclient.db("rezepttool").collection("rezepte").deleteMany({ title: rezept });
+        await dbclient.db("rezepttool").collection("rezepte").deleteOne({ title: rezept, user: user });
         return JSON.stringify({ ok: true });
     }
     /**

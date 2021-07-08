@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         let editBtn = document.createElement("BUTTON");
         editBtn.innerText = "Editieren";
         editBtn.addEventListener("click", () => startEditRezept(rezept));
+        let deleteBtn = document.createElement("BUTTON");
+        editBtn.innerText = "Löschen";
+        editBtn.addEventListener("click", () => deleteRez(rezept.title));
         title.innerText = rezept.title;
         description.innerText = rezept.description;
         user.innerText = "von: " + rezept.user;
@@ -91,5 +94,18 @@ function startEditRezept(rezept) {
     form.appendChild(editSubmit);
     form.removeEventListener("submit", createRezept);
     form.addEventListener("submit", (evt) => createRezept(evt, true));
+}
+async function deleteRez(title) {
+    let user = localStorage.getItem("loggedInUser");
+    if (!user) {
+        window.location.assign("login.html");
+        return;
+    }
+    let response = await fetch(SERVER_URL + '/deleterezept?user=' + user + '&rezept=' + title).then((res) => res.json());
+    if (response.error) {
+        showStatus("Das rezept konnte nicht gelöscht werden.");
+        return;
+    }
+    window.location.reload();
 }
 //# sourceMappingURL=meineRezepte.js.map
