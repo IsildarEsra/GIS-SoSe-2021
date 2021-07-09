@@ -1,6 +1,90 @@
 #status {
     color: red;
+    font-family: cursive;
 }
 body {
-    background-image:image("blumen.png");
+    background-color: rgba(179, 255, 0, 0.452);
+    position: relative;
+    width: 400px;
+    border: 0px;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    font-family: cursive;
+}
+
+p {
+    font-family: cursive;
+}
+
+button {
+    color: black;
+    font-family: cursive;
+    background-color: grey;
+}
+
+#registration, #login {
+    color: black;
+    font-family: cursive;
+    background-color: grey;
+}
+
+header nav ul{
+    list-style-type: none;
+    margin-right: auto;
+    text-align: right;
+    padding: 0;
+    overflow: hidden;
+}
+
+header nav ul li {
+    float: right;
+}
+    
+header nav ul li a {
+    color: black;
+    display: block;
+    padding: 8px;
+    background-color:grey;
+}
+  
+header nav ul li a:hover:not(.active) {
+    background-color:rgba(179, 255, 0, 0.61);
+}
+    
+.active {
+    background-color: rgba(179, 255, 0, 0.61);
+}
+
+
+@media only screen and (min-width: 601px) {
+    body{
+      width: 700px;
+    }
+    .header-text{
+    width:600px; 
+    border-radius: 0px 0px 900px 900px; 
+    height: auto;
+    font-size: 100pt;
+    background: grey;
+    }
+}
+    
+  
+@media only screen and (min-width: 1025px) {
+    body{
+      width: 1025px;
+    }
+    .icon img{
+      width: 50px;
+    }
+    .header-text{
+    width:1000px;  
+    border-radius: 0px 0px 1500px 1500px;
+    height: auto;
+    font-size: 130pt;
+    background:grey;
+    }
 }
