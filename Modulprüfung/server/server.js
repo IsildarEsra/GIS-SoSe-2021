@@ -42,10 +42,7 @@ var RezeptTool;
         _response.end();
     }
     /**
-     * Funktion, welche Antwort an den Client berechnet
-     * @param request
-     * @returns
-     */
+     * Funktion, welche Antwort an den Client berechnet*/
     async function getRequest(request) {
         //URL Objekt wird erzeugt, um URL dann aufzuteilen in Path und SearchParams
         let url = new Url.URL(request.url, "http://localhost:8100/");
@@ -90,10 +87,7 @@ var RezeptTool;
         return response;
     }
     /**
-     * Einloggen
-     * @param params
-     * @returns
-     */
+     * Einloggen*/
     async function login(params) {
         let username = params.get("username");
         let password = params.get("password");
@@ -107,10 +101,7 @@ var RezeptTool;
         return JSON.stringify(user);
     }
     /**
-     * User registrieren
-     * @param params
-     * @returns
-     */
+     * User registrieren*/
     async function register(params) {
         let username = params.get("username");
         let password = params.get("password");
@@ -128,10 +119,7 @@ var RezeptTool;
         return JSON.stringify({ ok: true });
     }
     /**
-     * Ein Rezept erstellen
-     * @param params
-     * @returns
-     */
+     * Ein Rezept erstellen*/
     async function createRez(params) {
         //parameter aus Request auslesen
         let title = params.get("title");
@@ -159,10 +147,7 @@ var RezeptTool;
         return JSON.stringify({ ok: true });
     }
     /**
-     * Ein Rezept editieren
-     * @param params
-     * @returns
-     */
+     * Ein Rezept editieren*/
     async function editRez(params) {
         let title = params.get("title");
         let newTitle = params.get("newTitle");
@@ -182,10 +167,7 @@ var RezeptTool;
         return JSON.stringify({ ok: update.ok });
     }
     /**
-     * Ein Rezept liken
-     * @param params
-     * @returns
-     */
+     * Ein Rezept liken*/
     async function likeRez(params) {
         let user = params.get("user");
         let rezept = params.get("rezept");
@@ -203,10 +185,7 @@ var RezeptTool;
         return JSON.stringify(like);
     }
     /**
-     * Like von einem Rezept entfernen
-     * @param params
-     * @returns
-     */
+     * Like von einem Rezept entfernen*/
     async function unlikeRez(params) {
         let user = params.get("user");
         let rezept = params.get("rezept");
@@ -217,10 +196,7 @@ var RezeptTool;
         return JSON.stringify({ ok: true });
     }
     /**
-     * Ein Rezept löschen
-     * @param params
-     * @returns
-     */
+     * Ein Rezept löschen*/
     async function deleteRez(params) {
         let user = params.get("user");
         let rezept = params.get("rezept");
@@ -231,9 +207,7 @@ var RezeptTool;
         return JSON.stringify({ ok: true });
     }
     /**
-     * Alle Rezepte ausgeben
-     * @returns
-     */
+     * Alle Rezepte ausgeben*/
     async function getAllRez(params) {
         let user = params.get("user");
         if (!user) {
@@ -252,10 +226,7 @@ var RezeptTool;
         return JSON.stringify(rezepte);
     }
     /**
-     * Alle favorisierten Rezepte eines Users ausgeben
-     * @param params
-     * @returns
-     */
+     * Alle favorisierten Rezepte eines Users ausgeben*/
     async function getLikedRez(params) {
         let user = params.get("user");
         if (!user) {
@@ -270,10 +241,7 @@ var RezeptTool;
         return JSON.stringify(rezepte);
     }
     /**
-     * Alle erstellten Rezepte eines Users ausgeben
-     * @param params
-     * @returns
-     */
+     * Alle erstellten Rezepte eines Users ausgeben*/
     async function getMyRez(params) {
         let user = params.get("user");
         if (!user) {

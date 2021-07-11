@@ -63,10 +63,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * Funktion, welche Antwort an den Client berechnet
-     * @param request 
-     * @returns 
-     */
+     * Funktion, welche Antwort an den Client berechnet*/
     async function getRequest(request: Http.IncomingMessage): Promise<string> {
         //URL Objekt wird erzeugt, um URL dann aufzuteilen in Path und SearchParams
         let url: Url.URL = new Url.URL(request.url, "http://localhost:8100/");
@@ -114,10 +111,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * Einloggen
-     * @param params 
-     * @returns 
-     */
+     * Einloggen*/
     async function login( params: URLSearchParams): Promise<string> {
         let username: string  = params.get("username");
         let password: string = params.get("password");
@@ -132,10 +126,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * User registrieren
-     * @param params 
-     * @returns 
-     */
+     * User registrieren*/
     async function register( params: URLSearchParams): Promise<string> {
         let username: string = params.get("username");
         let password: string = params.get("password");
@@ -154,10 +145,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * Ein Rezept erstellen
-     * @param params 
-     * @returns 
-     */
+     * Ein Rezept erstellen*/
     async function createRez( params: URLSearchParams): Promise<string> {
         //parameter aus Request auslesen
         let title: string = params.get("title");
@@ -186,10 +174,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * Ein Rezept editieren
-     * @param params 
-     * @returns 
-     */
+     * Ein Rezept editieren*/
     async function editRez( params: URLSearchParams): Promise<string> {
         let title: string = params.get("title");
         let newTitle: string = params.get("newTitle");
@@ -210,10 +195,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * Ein Rezept liken
-     * @param params 
-     * @returns 
-     */
+     * Ein Rezept liken*/
     async function likeRez( params: URLSearchParams): Promise<string> {
         let user: string = params.get("user");
         let rezept: string = params.get("rezept");
@@ -232,10 +214,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * Like von einem Rezept entfernen
-     * @param params 
-     * @returns 
-     */
+     * Like von einem Rezept entfernen*/
     async function unlikeRez( params: URLSearchParams): Promise<string> {
         let user: string = params.get("user");
         let rezept: string = params.get("rezept");
@@ -247,10 +226,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * Ein Rezept löschen
-     * @param params 
-     * @returns 
-     */
+     * Ein Rezept löschen*/
     async function deleteRez( params: URLSearchParams): Promise<string> {
         let user: string = params.get("user");
         let rezept: string = params.get("rezept");
@@ -262,9 +238,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * Alle Rezepte ausgeben
-     * @returns 
-     */
+     * Alle Rezepte ausgeben*/
     async function getAllRez(params: URLSearchParams): Promise<string> {
         let user: string = params.get("user");
         if (!user) {
@@ -284,10 +258,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * Alle favorisierten Rezepte eines Users ausgeben
-     * @param params 
-     * @returns 
-     */
+     * Alle favorisierten Rezepte eines Users ausgeben*/
     async function getLikedRez( params: URLSearchParams): Promise<string> {
         let user: string = params.get("user");
         if (!user) {
@@ -305,10 +276,7 @@ export namespace RezeptTool {
     }
 
     /**
-     * Alle erstellten Rezepte eines Users ausgeben
-     * @param params 
-     * @returns 
-     */
+     * Alle erstellten Rezepte eines Users ausgeben*/
     async function getMyRez(params: URLSearchParams): Promise<string> {
         let user: string = params.get("user");
         if (!user) {
